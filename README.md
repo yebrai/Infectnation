@@ -2,8 +2,6 @@
 
 ## Description
 
-Kraken-Brigade is a game where the player has to move ships horizontally and shoot up incoming tentacles that appear from the top of the screen and move to the bottom. The game ends when four tentacles get stacked in front of the fort wall. After that, a score is calculated based on tentacle destroyed and the amount of time the game lasted.
-
 Infectnation es un juego donde la mision es moverte horizontalmente y lanzar disparos para matar a los zombies y que estos no pasen a la zona de exclusion. la meta es conseguir aguantar el maximo tiempo conteniendo a los zombies.
 
 ## MVP (DOM - CANVAS)
