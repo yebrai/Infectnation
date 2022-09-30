@@ -8,18 +8,21 @@
     <title>Infectnation</title>
 </head>
 <body>
-    <section id="startWindow">
+    <section id="splash-screen">
         <h1>INFECTNATION</h1>
-        <button>Start game</button>
+        <button id="start-button">Start game</button>
     </section>
-    <section id="gameWindow">
-        <div><canvas id="my-canvas" width="500" height="700"></canvas></div>
+    <section id="game-screen">
+       <h5>Save us!</h5>
+      <canvas id="canvas" width="800" height="600"></canvas>
     </section>
-    <section>
+    <section id ="loser-screen">
         <h1>You lose!</h1>
         <h4>Your score: <span>0</span></h4>
+        <button id="restart-button">Try again!</button>
     </section>
 
-    <script src="./js/game.js"></script>
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/game.js"></script>
 </body>
 </html>

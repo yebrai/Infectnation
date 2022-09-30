@@ -1,0 +1,60 @@
+@import url('http://fonts.cdnfonts.com/css/highscore-hero');
+@import url('http://fonts.cdnfonts.com/css/zombie-control');
+
+
+#splash-screen {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 20% 40% 20%;
+    justify-items: center;
+    height: 80vh;
+    margin: 0 auto;
+
+}
+/* PANTALLA START*/
+#splash-screen h1{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-size: 3rem;
+    font-family: 'Highscore Hero', sans-serif;
+    font-weight: 400;
+
+}
+
+#start-button {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-family: 'Zombie Control', sans-serif;
+
+}
+
+
+
+/* PANTALLA GAME*/
+
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 80vh;
+    margin: 0 auto;
+    
+}
+
+#game-screen h5{
+
+}
+
+#game-screen canvas{
+
+}
+
+
+
+/* PANTALLA LOSER*/
