@@ -6,18 +6,18 @@ Infectnation es un juego donde la mision es moverte horizontalmente y lanzar dis
 
 ## MVP (DOM - CANVAS)
 
-- game has three ship that moves horizontally
-- ship shoots cannonballs up
-- tentacles appear randomly from the top of the screen
-- four tentacles stacking will end the game
-- cannonballs destroy tentacles
-- reload time for shooting cannonballs
-- Increasing dificulty
+- Soldier class, moves on Y-exis
+- zombie class, moves on X-exis to widht
+- zombies appear on random x-exis
+- bullets kill zombies
+- the shoot speed increase with kills
+- the zombies respawn appear with kills
+- kills counter, and extra animation for each 10 kills
 
 ## Backlog
 
 - add scoreboard
-- Ability to start the game on increased dificulty lvl
+- Ability to start the game
 
 ## Data Structure
 
