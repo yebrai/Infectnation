@@ -18,6 +18,7 @@ const startGame = () => {
   gameScreen.style.display= "flex"
   gameObj = new Game()
   gameObj.gameLoop()
+
 }
 
 
@@ -41,7 +42,9 @@ window.addEventListener("keydown", (event) => {
 window.addEventListener("keydown", (event) => { 
     if (gameObj !== undefined) {
         if (event.code === "Space") {
-            gameObj.bullet.drawBullet()
+            gameObj.bullet.drawBullet(gameObj.soldier.y)
+            gameObj.bullet.speed++
+            console.log("shoot")
             
         }
     }

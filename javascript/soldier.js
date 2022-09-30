@@ -15,10 +15,6 @@ class Soldier {
         if (this.y > canvasElement.width) {}
     }
 
-    soldierMovement = () => {
-        
-
-    }
 
 
 }
