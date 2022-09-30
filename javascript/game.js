@@ -21,6 +21,7 @@ class Game {
     //3. Dibujo de elementos.
     this.drawFondo();
     this.soldier.drawSoldier();
+    this.bullet.drawBullet(this.soldier.y)
     ////////////////// this.bullet.drawBullet(this.soldier.y)
     //4. control de la recursion
     if (this.isGameOn) {

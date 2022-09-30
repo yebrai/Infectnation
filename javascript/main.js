@@ -1,4 +1,6 @@
 
+// no logro implkementar el tiro, aparece automatico pero tiene que ser al pulsar space
+
 const canvasElement = document.querySelector("#canvas")
 const ctx = canvas.getContext("2d");
 const startScreen = document.querySelector("#splash-screen")
@@ -42,8 +44,7 @@ window.addEventListener("keydown", (event) => {
 window.addEventListener("keydown", (event) => { 
     if (gameObj !== undefined) {
         if (event.code === "Space") {
-            gameObj.bullet.drawBullet(gameObj.soldier.y)
-            gameObj.bullet.speed++
+        //No logro implementar el tiro    gameObj.bullet.drawBullet(this.soldier.y)
             console.log("shoot")
             
         }
