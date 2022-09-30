@@ -1,5 +1,6 @@
 @import url('http://fonts.cdnfonts.com/css/highscore-hero');
 @import url('http://fonts.cdnfonts.com/css/zombie-control');
+@import url('http://fonts.cdnfonts.com/css/qtmilitary');
 
 
 #splash-screen {
@@ -48,7 +49,8 @@
 }
 
 #game-screen h5{
-
+    font-family: 'QTMilitary', sans-serif;
+    font-size: 2rem;
 }
 
 #game-screen canvas{
