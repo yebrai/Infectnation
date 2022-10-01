@@ -8,6 +8,7 @@ class Game {
     this.soldier = new Soldier();
     this.bulletArr = [];
     this.zombieArr = [];
+    this.jetArr = [];
     this.frames = 0;
     this.health = 3;
     this.isGameOn = true;
@@ -21,11 +22,13 @@ class Game {
   }
 
   addBullet = () => {
+    if(this.frames > 20) {
     this.bulletArr.push(new Bullet());
     console.log("fire");
+   }
   };
   addZombie = () => {
-    if (this.frames % 80 === 0) {
+    if (this.frames % 40 === 0) {
       console.log("Zombie");
       switch (randomInt(1,3)) {
         case 1:
@@ -43,6 +46,13 @@ class Game {
       }
     }
   };
+
+  addIntervalJet = () => {
+    if (this.frames === 100 || this.frames % 380 === 0){
+     this.jetArr.push(new Jet)
+      console.log("jet")
+  }
+  }
 
   zombieAttack = () => {
     this.zombieArr.forEach((eachZombie) => {
@@ -89,6 +99,7 @@ class Game {
 
   //recursion
   gameLoop = () => {
+    //console.log(this.frames);
     this.frames++;
     // console.log("test");
     //1. Limpiar canvas para animaciones
@@ -109,6 +120,13 @@ class Game {
       eachBullet.drawBullet(bulletRespawn);
       eachBullet.shotSpeed();
     });
+    this.addIntervalJet()
+    this.jetArr.forEach((eachJet) => {
+      if(this.jetArr.length !== 0) {
+      eachJet.drawJet()
+      eachJet.drawShadowJet()
+      }
+    })
 
     ////////////////// this.bullet.drawBullet(this.soldier.y)
     //4. control de la recursion

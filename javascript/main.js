@@ -10,12 +10,15 @@ const gameScreen = document.querySelector("#game-screen")
 const loserScreen = document.querySelector("#loser-screen")
 const startButton = document.querySelector("#start-button")
 const restartButton = document.querySelector("#restart-button")
+const infecnationLogo = document.querySelector("#splash-screen h1")
 
 let bulletRespawn = 0
 let gameObj
 //mantener pantallas fuera del start game
 gameScreen.style.display= "none"
 loserScreen.style.display= "none"
+
+
 
 const startGame = () => {
   startScreen.style.display = "none"
