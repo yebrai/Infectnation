@@ -45,8 +45,8 @@ class Game {
       if (
         (this.soldier.x -40) < eachZombie.x + eachZombie.w &&
         (this.soldier.x -40) + this.soldier.w > eachZombie.x &&
-        this.soldier.y < eachZombie.y + eachZombie.h -30 &&
-        this.soldier.h -30 + this.soldier.y > eachZombie.y
+        this.soldier.y < eachZombie.y + (eachZombie.h -30) &&
+        (this.soldier.h -30) + this.soldier.y > eachZombie.y
       ) {
         this.gameOver();
       }
