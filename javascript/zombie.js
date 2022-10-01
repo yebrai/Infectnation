@@ -3,7 +3,7 @@ class Zombie {
         this.img = new Image()
         this.img.src = image
         this.x = canvas.width
-        this.y = randomInt(50, canvasElement.height - 70)
+        this.y = randomInt(50, canvasElement.height - 80)
         this.w = 80
         this.h = 80
         this.walkSpeed = randomInt(1, 3)
