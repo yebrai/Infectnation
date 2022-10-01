@@ -2,17 +2,22 @@
 @import url('http://fonts.cdnfonts.com/css/zombie-control');
 @import url('http://fonts.cdnfonts.com/css/qtmilitary');
 
+html {
+    background-color: rgb(54 36 24);
+}
 
 #splash-screen {
     display: grid;
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 20% 40% 20%;
     justify-items: center;
-    height: 80vh;
+    height: 90vh;
+    width: 110vh;
     margin: 0 auto;
     background-image: url('./images/backgrounds/start.jpg');
     background-position: center;
     background-size: cover;
+    border: 4px #080808 solid;
 
 }
 /* PANTALLA START*/
@@ -68,7 +73,7 @@
 }
 
 #game-screen canvas{
-
+    border: 4px #080808 solid;
 }
 
 
