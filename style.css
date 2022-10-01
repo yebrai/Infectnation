@@ -10,6 +10,9 @@
     justify-items: center;
     height: 80vh;
     margin: 0 auto;
+    background-image: url('./images/backgrounds/start.jpg');
+    background-position: center;
+    background-size: cover;
 
 }
 /* PANTALLA START*/
@@ -18,9 +21,10 @@
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: 'Highscore Hero', sans-serif;
     font-weight: 400;
+    color: rgb(207,22,22);
 
 }
 
@@ -30,7 +34,17 @@
     grid-row-start: 3;
     grid-row-end: 4;
     font-family: 'Zombie Control', sans-serif;
-
+    font-size: 2.5rem;
+    border: 0;
+    height: 10vh;
+    width: 50vh;
+    background-color: Transparent;
+    border: none;
+    cursor:pointer;
+    border-radius: 6px;
+    text-shadow: 0 0 30px #fff;
+    box-shadow: 0 0 20px rgb(180, 3, 20);
+    color: rgb(103, 10, 19);
 }
 
 
@@ -60,3 +74,25 @@
 
 
 /* PANTALLA LOSER*/
+
+#loser-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh auto;
+}
+
+#loser-screen h1{
+    font-size: 6rem;
+    font-family: 'Zombie Control', sans-serif;
+}
+
+#loser-screen h4{
+    font-size: 2rem;
+    margin: 10vh;
+}
+
+#loser-screen button{
+    font-size: 1rem;
+}

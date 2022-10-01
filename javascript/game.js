@@ -2,6 +2,8 @@ class Game {
   constructor() {
     this.fondo = new Image();
     this.fondo.src = "./images/ground.png";
+    this.wall= new Image()
+    this.wall.src = "./images/walldown.png"
     this.isGameOn = true;
     this.soldier = new Soldier();
     this.bulletArr = [];
@@ -14,12 +16,14 @@ class Game {
   drawFondo = () => {
     ctx.drawImage(this.fondo, 0, 0, canvasElement.width, canvasElement.height);
   };
+  drawWall = () => {
+    ctx.drawImage(this.wall, 850, 0, -200, canvasElement.height);
+  }
 
   addBullet = () => {
     this.bulletArr.push(new Bullet());
-    console.log("shoot");
+    console.log("fire");
   };
-
   addZombie = () => {
     if (this.frames % 80 === 0) {
       console.log("Zombie");
@@ -53,6 +57,20 @@ class Game {
     });
   };
 
+  // zombieHitbox = () => {
+  //   this.bulletArr.forEach((eachBullet) => {
+  //     if (
+  //       this.eachBullet.x < this.zombieArr.x + this.zombieArr.w &&
+  //       this.eachBullet.x + this.eachBullet.w > this.zombieArr.x &&
+  //       this.eachBullet.y < this.zombieArr.y + this.zombieArr.h &&
+  //       this.eachBullet.h + this.eachBullet.y > this.zombieArr.y
+  //     ) {
+  //       // Collision
+  //       console.log("Colision");
+  //     }
+  //   })
+  // }
+
   zombieWin = () => {
     if (this.zombieArr.length !== 0 && this.zombieArr[0].x < -20) {
       this.health--;
@@ -80,6 +98,7 @@ class Game {
     this.zombieWin();
     //3. Dibujo de elementos.
     this.drawFondo();
+    this.drawWall()
     this.addZombie();
     this.zombieArr.forEach((eachZombie) => {
       eachZombie.drawZombie();
@@ -87,7 +106,7 @@ class Game {
     });
     this.soldier.drawSoldier();
     this.bulletArr.forEach((eachBullet) => {
-      eachBullet.drawBullet(this.soldier.y);
+      eachBullet.drawBullet(bulletRespawn);
       eachBullet.shotSpeed();
     });
 

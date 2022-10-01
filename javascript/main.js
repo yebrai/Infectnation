@@ -1,5 +1,5 @@
 
-// implementar tiro, event con click llama a funcion addBullet > push bulletArr >forEach en recursion ¿Que falla?
+// como hacer colision entre arr bull y arr zombie? Necesito comprobar las pos de ambos
 
 
 
@@ -9,8 +9,9 @@ const startScreen = document.querySelector("#splash-screen")
 const gameScreen = document.querySelector("#game-screen")
 const loserScreen = document.querySelector("#loser-screen")
 const startButton = document.querySelector("#start-button")
+const restartButton = document.querySelector("#restart-button")
 
-
+let bulletRespawn = 0
 let gameObj
 //mantener pantallas fuera del start game
 gameScreen.style.display= "none"
@@ -33,6 +34,7 @@ const loseGame = () => {
 }
 
 startButton.addEventListener("click", startGame)
+restartButton.addEventListener("click", startGame)
 
 window.addEventListener("keydown", (event) => {
     if (gameObj !== undefined) {
@@ -48,7 +50,9 @@ window.addEventListener("keydown", (event) => {
 window.addEventListener("click", (event) => { 
     if (gameObj !== undefined) {
         gameObj.addBullet()
-            
+        bulletRespawn = gameObj.soldier.y
+        console.log(bulletRespawn)
+        
             
         
     }

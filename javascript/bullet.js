@@ -4,17 +4,14 @@ class Bullet {
         this.img.src = "./images/bullet.png"
         this.x = 50; 
         //this.y = 0 necesita ser la posy del soldier
-        this.w = 10; 
-        this.h = 10; 
-        this.speed = 20
-        //this.openFire = false
+        this.w = 30; 
+        this.h = 30; 
+        this.speed = 40
+
     }
 
     drawBullet =(yRespawn) => {
-       // if (this.openFire === true) {
         ctx.drawImage(this.img, this.x + 40, yRespawn +30, this.w, this.h);
-
-  //  }
     }
 
     shotSpeed = () => {
