@@ -12,7 +12,7 @@ class Soldier {
 
     drawSoldier = () => {
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-        if (this.y > canvasElement.width) {}
+        
     }
 
 

@@ -1,5 +1,7 @@
 
-// no logro implkementar el tiro, aparece automatico pero tiene que ser al pulsar space
+// implementar tiro, event con click llama a funcion addBullet > push bulletArr >forEach en recursion ¿Que falla?
+
+
 
 const canvasElement = document.querySelector("#canvas")
 const ctx = canvas.getContext("2d");
@@ -32,21 +34,20 @@ startButton.addEventListener("click", startGame)
 
 window.addEventListener("keydown", (event) => {
     if (gameObj !== undefined) {
-        if(event.code === "ArrowUp" && gameObj.soldier.y > 0) {
+        if(event.code === "KeyW" && gameObj.soldier.y > 0) {
             gameObj.soldier.y = gameObj.soldier.y - 10
             
-        } else if (event.code === "ArrowDown" && gameObj.soldier.y < canvasElement.height - gameObj.soldier.h) {
+        } else if (event.code === "KeyS" && gameObj.soldier.y < canvasElement.height - gameObj.soldier.h) {
             gameObj.soldier.y = gameObj.soldier.y + 10
         }
     }
 })
 
-window.addEventListener("keydown", (event) => { 
+window.addEventListener("click", (event) => { 
     if (gameObj !== undefined) {
-        if (event.code === "Space") {
-        //No logro implementar el tiro    gameObj.bullet.drawBullet(this.soldier.y)
-            console.log("shoot")
+        gameObj.addBullet()
             
-        }
+            
+        
     }
 })
