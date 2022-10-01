@@ -27,7 +27,9 @@ const startGame = () => {
 
 
 const loseGame = () => {
-
+    startScreen.style.display = "none"
+    loserScreen.style.display = "flex"
+    gameScreen.style.display= "none"
 }
 
 startButton.addEventListener("click", startGame)
