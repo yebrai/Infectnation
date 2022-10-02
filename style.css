@@ -20,6 +20,8 @@ html {
   background-size: cover;
   border: 4px #080808 solid;
 }
+
+
 /* PANTALLA START*/
 #splash-screen h1 {
   grid-column-start: 1;
@@ -35,7 +37,7 @@ html {
   margin: 0.5vh;
 }
 
-#start-button {
+#start-button  {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 3;
@@ -57,6 +59,49 @@ html {
 #start-button:hover {
   color: rgb(180, 3, 20);
   box-shadow: 0 0 50px rgb(180, 3, 20);
+}
+
+/*PANTALLA INTRO*/
+#intro-screen {
+  border: 4px #080808 solid;
+  height: 90vh;
+  width: 110vh;
+  margin: 0 auto;
+  background-image: url('./images/backgrounds/intro1.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  font-size: 2rem;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.intro-text {
+  text-align: center;
+  color: #000000;
+  text-shadow: 0px 0px 10px white;
+  font-family: "QTMilitary", sans-serif;
+}
+
+#intro-screen button{
+  font-family: "QTMilitary", sans-serif;
+  font-size: 1.5rem;
+  border: 0;
+  height: 7vh;
+  width: 50vh;
+  justify-content: center;
+  align-items: center;
+  
+
+  background-color: rgb(98 45 10 / 36%);
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  text-shadow: 0 0 30px #fff;
+  color: #fff;
 }
 
 /* PANTALLA GAME*/
@@ -103,4 +148,25 @@ html {
 
 #loser-screen button {
   font-size: 1rem;
+}
+
+#restart-button {
+  font-family: "Zombie Control", sans-serif;
+  font-size: 2.5rem;
+  border: 0;
+  height: 10vh;
+  width: 30vh;
+  background-color: rgb(138 64 14);
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  text-shadow: 0 0 30px rgb(255, 111, 8);
+  box-shadow: 0 0 20px rgb(180, 3, 20);
+  color: black;
+}
+
+#restart-button:hover {
+  color: rgb(180, 3, 20);
+  box-shadow: 0 0 50px rgb(211 98 23);
+  background-color: rgb(211 98 23);
 }

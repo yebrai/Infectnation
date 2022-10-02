@@ -6,23 +6,35 @@
 const canvasElement = document.querySelector("#canvas")
 const ctx = canvas.getContext("2d");
 const startScreen = document.querySelector("#splash-screen")
+const introScreen = document.querySelector("#intro-screen")
+const introButton = document.querySelector(".save-us")
 const gameScreen = document.querySelector("#game-screen")
 const loserScreen = document.querySelector("#loser-screen")
 const startButton = document.querySelector("#start-button")
 const restartButton = document.querySelector("#restart-button")
 const infecnationLogo = document.querySelector("#splash-screen h1")
 
+
 let bulletRespawn = 0
 let gameObj
 //mantener pantallas fuera del start game
 gameScreen.style.display= "none"
 loserScreen.style.display= "none"
+introScreen.style.display= "none"
+
+const introGame = () => {
+    introScreen.style.display= "flex"
+    gameScreen.style.display= "none"
+    loserScreen.style.display= "none"
+    startScreen.style.display = "none"
+}
 
 
 
 const startGame = () => {
   startScreen.style.display = "none"
   loserScreen.style.display = "none"
+  introScreen.style.display= "none"
   gameScreen.style.display= "flex"
   gameObj = new Game()
   gameObj.gameLoop()
@@ -33,10 +45,12 @@ const startGame = () => {
 const loseGame = () => {
     startScreen.style.display = "none"
     loserScreen.style.display = "flex"
+    introScreen.style.display= "none"
     gameScreen.style.display= "none"
 }
 
-startButton.addEventListener("click", startGame)
+startButton.addEventListener("click", introGame)
+introButton.addEventListener("click", startGame)
 restartButton.addEventListener("click", startGame)
 
 window.addEventListener("keydown", (event) => {
