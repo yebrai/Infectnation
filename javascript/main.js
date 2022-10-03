@@ -48,6 +48,7 @@ const startGame = () => {
   gameScreen.style.display= "flex"
   gameObj = new Game(144)
   gameObj.gameLoop()
+  napalmRemains = 3
 
 
 }
