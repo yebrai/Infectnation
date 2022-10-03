@@ -1,12 +1,12 @@
 class Jet {
-    constructor() {
+    constructor(yPos) {
         this.img = new Image()
         this.img.src = "./images/jet.png"
         this.x = 0; 
-        this.y = randomInt(100, 500)
+        this.y = yPos
         this.w = 250; 
         this.h = 250; 
-        this.speed = 5
+        this.speed = 3
         this.shadow = new Image()
         this.shadow.src = "./images/shadowjet.png"
 

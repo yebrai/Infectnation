@@ -1,4 +1,5 @@
-
+//Tocado la velocidad de los zombies para mantener los hz
+// tocada la pantalla gameover para que se congele
 // como hacer colision entre arr bull y arr zombie? Necesito comprobar las pos de ambos
 
 
@@ -13,10 +14,19 @@ const loserScreen = document.querySelector("#loser-screen")
 const startButton = document.querySelector("#start-button")
 const restartButton = document.querySelector("#restart-button")
 const infecnationLogo = document.querySelector("#splash-screen h1")
+const healthScore = document.querySelector(".healths span")
+const totalKills = document.querySelector("#loser-screen span")
+const killScore = document.querySelector(".kills span")
+const rescueTime = document.querySelector(".evacuation span")
 
 
-let bulletRespawn = 0
+
 let gameObj
+let bulletRespawn = 0
+let napalmRespawn = 0
+let napalmRemains = 3
+
+
 //mantener pantallas fuera del start game
 gameScreen.style.display= "none"
 loserScreen.style.display= "none"
@@ -36,8 +46,9 @@ const startGame = () => {
   loserScreen.style.display = "none"
   introScreen.style.display= "none"
   gameScreen.style.display= "flex"
-  gameObj = new Game()
+  gameObj = new Game(144)
   gameObj.gameLoop()
+
 
 }
 
@@ -56,21 +67,28 @@ restartButton.addEventListener("click", startGame)
 window.addEventListener("keydown", (event) => {
     if (gameObj !== undefined) {
         if(event.code === "KeyW" && gameObj.soldier.y > 0) {
-            gameObj.soldier.y = gameObj.soldier.y - 10
+            gameObj.soldier.movementSoldier("up")
             
         } else if (event.code === "KeyS" && gameObj.soldier.y < canvasElement.height - gameObj.soldier.h) {
-            gameObj.soldier.y = gameObj.soldier.y + 10
+            gameObj.soldier.movementSoldier("down")
+        } else if (event.code === "Space") {        
+            if (napalmRemains <= 0) {
+            return
+            }
+            napalmRespawn = gameObj.soldier.y
+            gameObj.addNapalm()
+            gameObj.jetArr.push(new Jet(napalmRespawn))
+            napalmRemains--
+
         }
+
     }
 })
 
-window.addEventListener("click", (event) => { 
+window.addEventListener("click", () => { 
     if (gameObj !== undefined) {
-        gameObj.addBullet()
         bulletRespawn = gameObj.soldier.y
-        console.log(bulletRespawn)
-        
-            
+        gameObj.addBullet()
         
     }
 })

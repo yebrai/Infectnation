@@ -2,7 +2,8 @@ class Bullet {
     constructor()  {
         this.img = new Image()
         this.img.src = "./images/bullet.png"
-        this.x = 50; 
+        this.x = 90; 
+        this.y = bulletRespawn
         //this.y = 0 necesita ser la posy del soldier
         this.w = 30; 
         this.h = 30; 
@@ -10,8 +11,8 @@ class Bullet {
 
     }
 
-    drawBullet =(yRespawn) => {
-        ctx.drawImage(this.img, this.x + 40, yRespawn +30, this.w, this.h);
+    drawBullet =() => {
+        ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     }
 
     shotSpeed = () => {

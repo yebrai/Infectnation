@@ -12,8 +12,8 @@ html {
   grid-template-columns: 20% 60% 20%;
   grid-template-rows: 20% 40% 20%;
   justify-items: center;
-  height: 90vh;
-  width: 110vh;
+  height: 80vh;
+  width: 90vh;
   margin: 0 auto;
   background-image: url("./images/backgrounds/start.jpg");
   background-position: center;
@@ -64,8 +64,8 @@ html {
 /*PANTALLA INTRO*/
 #intro-screen {
   border: 4px #080808 solid;
-  height: 90vh;
-  width: 110vh;
+  height: 80vh;
+  width: 90vh;
   margin: 0 auto;
   background-image: url('./images/backgrounds/intro1.jpg');
   background-position: center;
@@ -76,7 +76,6 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-
 }
 
 .intro-text {
@@ -90,18 +89,26 @@ html {
   font-family: "QTMilitary", sans-serif;
   font-size: 1.5rem;
   border: 0;
-  height: 7vh;
-  width: 50vh;
+  height: 3vh;
+  width: 90vh;
   justify-content: center;
   align-items: center;
-  
-
   background-color: rgb(98 45 10 / 36%);
   border: none;
   cursor: pointer;
   border-radius: 6px;
   text-shadow: 0 0 30px #fff;
   color: #fff;
+}
+
+.intructions {
+  border: 4px #080808 solid;
+  background-color: rgb(98 45 10 / 50%);
+  border-radius: 5%;
+  width: 85vh;
+  height: 40vh;
+  margin-top: 12vh;
+  box-shadow: 0 0 20px rgba(54,36,24,1) ;
 }
 
 /* PANTALLA GAME*/
@@ -116,10 +123,22 @@ html {
   margin: 0 auto;
 }
 
-#game-screen h5 {
+#game-screen {
   font-family: "QTMilitary", sans-serif;
   font-size: 2rem;
 }
+
+#value-nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  gap: 8vh;
+  margin-bottom: 3vh;
+  
+}
+
+
 
 #game-screen canvas {
   border: 4px #080808 solid;

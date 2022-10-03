@@ -17,16 +17,36 @@
                 CONTAIN THE ZOMBIES OUTSIDE THE RESCUE ZONE!</p>
             <button class="save-us">Push here for start</button>
             <div class="intructions">
-                <p>you can move with W S keyboards, shot with ur left-click mouse</p>
+             <div>
+                <p>controles de movimiento</p>
+                <div>animacion de movimiento</div>
+                </div>
+            <div>
+                 <p>controles de tiro</p>
+                <div>animacion de tiro</div>
+           </div>
         </div>
     </section>
     <section id="game-screen">
-       <h5>Save us!</h5>
+        <section id="value-nav">
+            <div class="healths">
+                <h6>Healths</h6>
+                <span>0</span>
+            </div>
+            <div class="evacuation">
+                <h6>Time for evacuation</h6>
+                <span>0</span>
+            </div>
+           <div class="kills">
+                <h6>Eliminations</h6>
+                <span>0</span>
+            </div>
+        </section>
       <canvas id="canvas" width="800" height="600"></canvas>
     </section>
     <section id ="loser-screen">
         <h1>You lose!</h1>
-        <h4>Zombie streak: <span>0</span></h4>
+        <h4>Total kills: <span>0</span></h4>
         <button id="restart-button">Try again!</button>
     </section>
 
@@ -39,5 +59,6 @@
     <script src="./javascript/js animations/animations.js"></script>
     <script src="./javascript/js animations/jet.js"></script>
     <script src="./javascript/js animations/wall.js"></script>
+    <script src="./javascript/napalm.js"></script>
 </body>
 </html>

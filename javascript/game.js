@@ -1,5 +1,5 @@
 class Game {
-  constructor() {
+  constructor(fps) {
     this.fondo = new Image();
     this.fondo.src = "./images/ground.png";
     this.wall= new Image()
@@ -9,11 +9,20 @@ class Game {
     this.bulletArr = [];
     this.zombieArr = [];
     this.jetArr = [];
+    this.napalm = [];
     this.frames = 0;
     this.health = 3;
+    this.kills = 0;
     this.isGameOn = true;
+    this.timeLeft = 30
+    this.fps = fps
   }
 
+  fpsRender = () => {
+    if (this.frames % this.fps === 0) {
+      this.timeLeft--
+    }
+  }
   drawFondo = () => {
     ctx.drawImage(this.fondo, 0, 0, canvasElement.width, canvasElement.height);
   };
@@ -24,12 +33,10 @@ class Game {
   addBullet = () => {
     if(this.frames > 20) {
     this.bulletArr.push(new Bullet());
-    console.log("fire");
    }
   };
   addZombie = () => {
-    if (this.frames % 40 === 0) {
-      console.log("Zombie");
+    if (this.frames % this.timeLeft === 0) {
       switch (randomInt(1,3)) {
         case 1:
           this.zombieArr.push(new Zombie("./images/zombie1.png"));
@@ -40,19 +47,39 @@ class Game {
         case 3:
           this.zombieArr.push(new Zombie("./images/zombie3.png"));
           break;
-       // case 4:
-         // this.zombieArr.push(new Zombie("./images/zombie4.png"));
-         // break;
+
       }
+      
     }
   };
 
   addIntervalJet = () => {
-    if (this.frames === 100 || this.frames % 380 === 0){
-     this.jetArr.push(new Jet)
-      console.log("jet")
+    if (this.frames === 0 || this.frames % 580 === 50){
+     this.jetArr.push(new Jet(randomInt(100, 500)))
   }
   }
+  addNapalm = () => {
+    this.napalm.push(new Napalm)
+  }
+  napalmDamage = () => {
+    if (this.napalm.length === 0) {
+      return
+    }
+    this.zombieArr.forEach((eachZombie, indiceZombie) => {
+      this.napalm.forEach((eachNapalm, indiceBullet) => {
+        if (
+          eachNapalm.x < eachZombie.x + eachZombie.w &&
+          eachNapalm.x + eachNapalm.w > eachZombie.x &&
+          eachNapalm.y < eachZombie.y + eachZombie.h &&
+          eachNapalm.h + eachNapalm.y > eachZombie.y
+        ) {
+          this.zombieArr.splice(indiceZombie, 1)
+          this.kills++
+  
+        }
+      })
+    })
+    }
 
   zombieAttack = () => {
     this.zombieArr.forEach((eachZombie) => {
@@ -67,22 +94,31 @@ class Game {
     });
   };
 
-  // zombieHitbox = () => {
-  //   this.bulletArr.forEach((eachBullet) => {
-  //     if (
-  //       this.eachBullet.x < this.zombieArr.x + this.zombieArr.w &&
-  //       this.eachBullet.x + this.eachBullet.w > this.zombieArr.x &&
-  //       this.eachBullet.y < this.zombieArr.y + this.zombieArr.h &&
-  //       this.eachBullet.h + this.eachBullet.y > this.zombieArr.y
-  //     ) {
-  //       // Collision
-  //       console.log("Colision");
-  //     }
-  //   })
-  // }
+ zombieHitbox = () => {
+  if (this.bulletArr.length === 0) {
+    return // console.log("deten la funcion")
+  }
+  this.zombieArr.forEach((eachZombie, indiceZombie) => {
+    this.bulletArr.forEach((eachNapalm, indiceBullet) => {
+      if (
+        eachNapalm.x < eachZombie.x + eachZombie.w &&
+        eachNapalm.x + eachNapalm.w > eachZombie.x &&
+        eachNapalm.y < eachZombie.y + eachZombie.h &&
+        eachNapalm.h + eachNapalm.y > eachZombie.y
+      ) {
+        this.zombieArr.splice(indiceZombie, 1)
+        this.bulletArr.splice(indiceBullet, 1)
+        this.kills++
+
+      }
+    })
+  })
+  }
+ 
 
   zombieWin = () => {
-    if (this.zombieArr.length !== 0 && this.zombieArr[0].x < -20) {
+    for (let i = 0; i<this.zombieArr.length; i++) {
+    if (this.zombieArr.length !== 0 && this.zombieArr[i].x < -20) {
       this.health--;
       console.log("el score es: ", this.health);
       if (this.health <= 0) {
@@ -91,6 +127,7 @@ class Game {
       //sacar el zombie que pasa del width
       this.zombieArr.shift();
     }
+  }
   };
   gameOver = () => {
     this.isGameOn = false;
@@ -105,8 +142,15 @@ class Game {
     //1. Limpiar canvas para animaciones
     ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
     //2. Acciones y movimientos de elementos.
+    healthScore.innerText = this.health
+    killScore.innerText = this.kills
+    totalKills.innerText = this.kills
+    rescueTime.innerText = this.timeLeft
     this.zombieAttack();
     this.zombieWin();
+    this.zombieHitbox();
+    this.napalmDamage();
+    this.fpsRender()
     //3. Dibujo de elementos.
     this.drawFondo();
     this.drawWall()
@@ -117,9 +161,16 @@ class Game {
     });
     this.soldier.drawSoldier();
     this.bulletArr.forEach((eachBullet) => {
-      eachBullet.drawBullet(bulletRespawn);
+      eachBullet.drawBullet();
       eachBullet.shotSpeed();
     });
+    this.napalm.forEach((eachNapalm) => {
+      if(this.napalm.length !== 0) {
+      eachNapalm.drawNapalm()
+      eachNapalm.napalmExpand()
+
+      }
+    })
     this.addIntervalJet()
     this.jetArr.forEach((eachJet) => {
       if(this.jetArr.length !== 0) {

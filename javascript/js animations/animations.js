@@ -12,3 +12,14 @@
  //setTimeOut
 
 
+//  function countDown() {
+//       timeLeft--
+//       if (timeLeft <= 0) {
+//             clearInterval()  
+//       }
+//  }
+
+ function clearCountDown() {
+      clearInterval(chronometerID)
+ }
+ 
