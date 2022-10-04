@@ -20,6 +20,7 @@ class Game {
     this.youLose = "url('./images/backgrounds/zombiewin.jpg')"
     this.jetCall = false
     this.infernolvl = false
+    this.fpsCount = 0
     
   }
 
@@ -52,7 +53,6 @@ class Game {
         case 3:
           this.zombieArr.push(new Zombie("./images/zombie3.png"));
           break;
-
       }
       
     }
@@ -134,7 +134,7 @@ class Game {
       let pilotMessage = `copied, we are on our way!`
       ctx.fillText(pilotMessage, canvas.width * 0.3, 80)
       ctx.fillStyle = "white"
-      if (this.frames % 240 === 0) {
+      if (this.fps % 240 === 0) {
         this.jetCall = false
       }
   }
@@ -182,7 +182,7 @@ class Game {
 
 
   //recursion
-  gameLoop = () => {
+  gameLoop = (stamp) => {
     //console.log(this.frames);
     this.frames++;
     // console.log("test");
@@ -204,7 +204,7 @@ class Game {
     this.drawWall()
     this.infernoMode()
     this.zombieArr.forEach((eachZombie) => {
-      eachZombie.drawZombie();
+      eachZombie.drawZombie(stamp);
       eachZombie.moveZombie();
     });
     this.soldier.drawSoldier();
@@ -227,12 +227,13 @@ class Game {
       }
     })
     this.drawNapalmRemains()
-    this.drawnPilotMessage()
+    this.drawnPilotMessage(stamp)
 
     ////////////////// this.bullet.drawBullet(this.soldier.y)
     //4. control de la recursion
     if (this.isGameOn) {
-      requestAnimationFrame(this.gameLoop);
+      requestAnimationFrame((stamp) => this.gameLoop(stamp));
+      console.log("gameloop: ",stamp)
     }
   };
 }

@@ -1,7 +1,7 @@
-// tienes un gameloopntro called
+// tienes un gameloopntro called hay q eliminarlo
 
-//No me funciona la funcion de fpsRenderice ¿?
-//No me funcionan los setTimeout
+
+
 
 const canvasElement = document.querySelector("#canvas")
 const ctx = canvas.getContext("2d");
@@ -94,19 +94,18 @@ introButton.addEventListener("click", startGame)
 restartButton.addEventListener("click", startGame)
 infernoButton.addEventListener("click", infernoMode)
 
-let fpsRender = (fps) => {
-    introFrames++
-    if (introFrames % fps === 0) {
-      fpsCount++
-    }
-}
+ let fpsRender = (fps) => {
+     introFrames++
+     if (introFrames % fps === 0) {
+       fpsCount++
+     }
+ }
 
 let gameLoopIntro = () => {
-    //fpsRenderice(introFrames, 144, fpsCount)
+    //fpsCount = fpsRenderice(introFrames, 144, fpsCount)
     fpsRender(144)
-    console.log(fpsCount)
+    //console.log(fpsCount)
    // console.log(introFrames)
-    //fpsRenderice(introFrames, 144, fpsCount)
 
 
 requestAnimationFrame(gameLoopIntro);
