@@ -11,13 +11,14 @@ const introScreen = document.querySelector("#intro-screen")
 const introButton = document.querySelector(".save-us")
 const gameScreen = document.querySelector("#game-screen")
 const loserScreen = document.querySelector("#loser-screen")
+const endTittle = document.querySelector("#loser-screen h1")
 const startButton = document.querySelector("#start-button")
 const restartButton = document.querySelector("#restart-button")
 const infecnationLogo = document.querySelector("#splash-screen h1")
 const healthScore = document.querySelector(".healths span")
 const totalKills = document.querySelector("#loser-screen span")
 const killScore = document.querySelector(".kills span")
-const rescueTime = document.querySelector(".evacuation span")
+const rescueTime = document.querySelector(".evacuation .value-time")
 
 
 
@@ -54,11 +55,15 @@ const startGame = () => {
 }
 
 
-const loseGame = () => {
+const endGame = (background, text, color, fontfamily) => {
     startScreen.style.display = "none"
     loserScreen.style.display = "flex"
     introScreen.style.display= "none"
     gameScreen.style.display= "none"
+    loserScreen.style.backgroundImage = background
+    endTittle.innerText = text
+    endTittle.style.color = color
+    endTittle.style.fontFamily = fontfamily
 }
 
 startButton.addEventListener("click", introGame)

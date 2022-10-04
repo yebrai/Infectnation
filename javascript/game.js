@@ -11,11 +11,13 @@ class Game {
     this.jetArr = [];
     this.napalm = [];
     this.frames = 0;
-    this.health = 3;
+    this.health = 0;
     this.kills = 0;
     this.isGameOn = true;
-    this.timeLeft = 30
+    this.timeLeft = 20
     this.fps = fps
+    this.youWin = "url('./images/backgrounds/win.jpg')"
+    this.youLose = "url('./images/backgrounds/zombiewin.jpg')"
   }
 
   fpsRender = () => {
@@ -114,14 +116,20 @@ class Game {
     })
   })
   }
+  drawNapalmRemains = () => {
+    ctx.font = "20px Bungee Spice";
+    // (elTexto, posX, posY)
+    let scoreStr = `Napalm Remains: ${napalmRemains}`
+    ctx.fillText(scoreStr, 10, 30)
+  }
  
 
   zombieWin = () => {
     for (let i = 0; i<this.zombieArr.length; i++) {
     if (this.zombieArr.length !== 0 && this.zombieArr[i].x < -20) {
-      this.health--;
+      this.health++;
       console.log("el score es: ", this.health);
-      if (this.health <= 0) {
+      if (this.health >= 5) {
        this.gameOver();
       }
       //sacar el zombie que pasa del width
@@ -131,8 +139,23 @@ class Game {
   };
   gameOver = () => {
     this.isGameOn = false;
-    loseGame()
+    endGame(this.youLose, "You Lose", "rgb(150 31 17)", "Zombie Control")
   };
+  
+  soldierWin = () => {
+    if(this.timeLeft <= 0) {
+      this.isGameOn = false;
+      this.winGame()
+      
+    }
+  }
+
+  winGame = () => {
+      this.isGameOn = false;
+      endGame(this.youWin, "You Win", "darkblue", "Highscore Hero")
+      
+  };
+
 
   //recursion
   gameLoop = () => {
@@ -148,6 +171,7 @@ class Game {
     rescueTime.innerText = this.timeLeft
     this.zombieAttack();
     this.zombieWin();
+    this.soldierWin()
     this.zombieHitbox();
     this.napalmDamage();
     this.fpsRender()
@@ -178,6 +202,7 @@ class Game {
       eachJet.drawShadowJet()
       }
     })
+    this.drawNapalmRemains()
 
     ////////////////// this.bullet.drawBullet(this.soldier.y)
     //4. control de la recursion

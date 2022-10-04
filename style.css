@@ -1,11 +1,17 @@
+/*fonts*/
 @import url("http://fonts.cdnfonts.com/css/highscore-hero");
 @import url("http://fonts.cdnfonts.com/css/zombie-control");
 @import url("http://fonts.cdnfonts.com/css/qtmilitary");
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+
 
 html {
     background: rgb(179,78,10);
     background: radial-gradient(circle, rgba(179,78,10,1) 0%, rgba(54,36,24,1) 100%);
 }
+
 
 #splash-screen {
   display: grid;
@@ -83,31 +89,32 @@ html {
   color: #000000;
   text-shadow: 0px 0px 10px white;
   font-family: "QTMilitary", sans-serif;
+  margin: 15vh;
+  margin-top: 5vh;
 }
 
 #intro-screen button{
   font-family: "QTMilitary", sans-serif;
   font-size: 1.5rem;
   border: 0;
-  height: 3vh;
+  height: 8vh;
   width: 90vh;
   justify-content: center;
   align-items: center;
-  background-color: rgb(98 45 10 / 36%);
+  background-color: rgba(0, 0, 0, 0.36);
   border: none;
   cursor: pointer;
   border-radius: 6px;
   text-shadow: 0 0 30px #fff;
   color: #fff;
+  border-radius: 10%;
 }
 
 .intructions {
-  background-color: rgb(98 45 10 / 50%);
   border-radius: 5%;
   width: 90vh;
   height: 40vh;
-  margin-top: 12vh;
-  box-shadow: 0 0 20px rgba(54,36,24,1) ;
+  margin-top: 7vh;
   color: white;
   display:flex;
   flex-direction: row;
@@ -117,8 +124,9 @@ html {
 }
 
 .intructions div{
-  border: 4px #080808 solid;
+  border: 3px #080808 solid;
   border-radius: 5%;
+  background-color: rgb(98 45 10 / 50%);
 }
 
 
@@ -144,9 +152,6 @@ html {
   background-size: cover;
 }
 
-.movement div{
-
-}
 
 
 /* PANTALLA GAME*/
@@ -155,16 +160,13 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   height: 80vh;
   width: 80vh;
   margin: 0 auto;
+  font-family: "QTMilitary", sans-serif;
+  font-size: 1.5rem;
 }
 
-#game-screen {
-  font-family: "QTMilitary", sans-serif;
-  font-size: 2rem;
-}
 
 #value-nav {
   display: flex;
@@ -175,11 +177,42 @@ html {
   margin-bottom: 3vh;
 }
 
+#value-nav div{
+  box-shadow: 0 0 20px rgb(180, 3, 20);
+  background: rgb(179,78,10);
+  background: radial-gradient(circle, rgba(179,78,10,1) 30%, rgba(104,36,24,1) 100%);
+  border: 1px #080808 solid;
+  border-radius: 5%;
+  font-family: 'Reem Kufi Ink', sans-serif;
+  font-size: 1.5rem;
+  width: 18vh;
+}
+
+#value-nav h6{
+font-size: 1.5rem;
+}
+
 
 
 #game-screen canvas {
   border: 4px #080808 solid;
   box-shadow: 0 0 20px rgb(180, 3, 20);
+}
+
+.kills span{
+  font-size: 2rem;
+  font-family: 'Bungee Spice', cursive;
+}
+
+.healths span{
+  font-size: 2rem;
+  font-family: 'Bungee Spice', cursive;
+}
+
+.evacuation span{
+  font-size: 2rem;
+  color: darkblue;
+  font-family: "QTMilitary", sans-serif;
 }
 
 /* PANTALLA LOSER*/
@@ -190,28 +223,40 @@ html {
   justify-content: center;
   align-items: center;
   margin: 10vh auto;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  width: 80vh;
+  box-shadow: 0 0 20px rgb(180, 3, 20);
+  border: 4px #080808 solid;
 }
 
 #loser-screen h1 {
   font-size: 6rem;
   font-family: "Zombie Control", sans-serif;
+  color: rgb(150 31 17);
+  text-shadow: 10px 10px 10px rgb(63, 10, 19);
+  
 }
 
 #loser-screen h4 {
   font-size: 2rem;
-  margin: 10vh;
+  margin: 8vh;
+  text-shadow: 10px 10px 10px rgb(63, 10, 19);
+  color: darkgray;
+  font-family: "Highscore Hero", sans-serif;
 }
 
 #loser-screen button {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 #restart-button {
   font-family: "Zombie Control", sans-serif;
   font-size: 2.5rem;
   border: 0;
-  height: 10vh;
-  width: 30vh;
+  height: 8vh;
+  width: 20vh;
   background-color: rgb(138 64 14);
   border: none;
   cursor: pointer;
