@@ -19,8 +19,7 @@ const healthScore = document.querySelector(".healths span")
 const totalKills = document.querySelector("#loser-screen span")
 const killScore = document.querySelector(".kills span")
 const rescueTime = document.querySelector(".evacuation .value-time")
-
-
+const fortunateSong = document.querySelector("#audioMain");
 
 let gameObj
 let bulletRespawn = 0
@@ -38,6 +37,7 @@ const introGame = () => {
     gameScreen.style.display= "none"
     loserScreen.style.display= "none"
     startScreen.style.display = "none"
+    fortunateSong.play()
 }
 
 
@@ -50,6 +50,7 @@ const startGame = () => {
   gameObj = new Game(144)
   gameObj.gameLoop()
   napalmRemains = 3
+  fortunateSong.play()
 
 
 }
@@ -64,6 +65,7 @@ const endGame = (background, text, color, fontfamily) => {
     endTittle.innerText = text
     endTittle.style.color = color
     endTittle.style.fontFamily = fontfamily
+    fortunateSong.pause()
 }
 
 startButton.addEventListener("click", introGame)
@@ -85,6 +87,7 @@ window.addEventListener("keydown", (event) => {
             gameObj.addNapalm()
             gameObj.jetArr.push(new Jet(napalmRespawn))
             napalmRemains--
+            gameObj.jetCall = true
 
         }
 

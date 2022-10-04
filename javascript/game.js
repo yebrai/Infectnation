@@ -18,6 +18,8 @@ class Game {
     this.fps = fps
     this.youWin = "url('./images/backgrounds/win.jpg')"
     this.youLose = "url('./images/backgrounds/zombiewin.jpg')"
+    this.jetCall = false
+    
   }
 
   fpsRender = () => {
@@ -122,7 +124,20 @@ class Game {
     let scoreStr = `Napalm Remains: ${napalmRemains}`
     ctx.fillText(scoreStr, 10, 30)
   }
- 
+
+  drawnPilotMessage = () => {
+    if (this.jetCall !== true) {
+      return
+    } else {
+      ctx.font = "20px QTMilitary";
+      let pilotMessage = `copied, we are on our way!`
+      ctx.fillText(pilotMessage, canvas.width * 0.3, 80)
+      ctx.fillStyle = "white"
+      if (this.frames % 240 === 0) {
+        this.jetCall = false
+      }
+  }
+  } 
 
   zombieWin = () => {
     for (let i = 0; i<this.zombieArr.length; i++) {
@@ -203,6 +218,7 @@ class Game {
       }
     })
     this.drawNapalmRemains()
+    this.drawnPilotMessage()
 
     ////////////////// this.bullet.drawBullet(this.soldier.y)
     //4. control de la recursion

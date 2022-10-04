@@ -11,6 +11,10 @@ html {
     background: radial-gradient(circle, rgba(179,78,10,1) 0%, rgba(54,36,24,1) 100%);
 }
 
+#audioMain{
+  display: none
+  }
+
 
 #splash-screen {
   display: grid;
