@@ -102,14 +102,52 @@ html {
 }
 
 .intructions {
-  border: 4px #080808 solid;
   background-color: rgb(98 45 10 / 50%);
   border-radius: 5%;
-  width: 85vh;
+  width: 90vh;
   height: 40vh;
   margin-top: 12vh;
   box-shadow: 0 0 20px rgba(54,36,24,1) ;
+  color: white;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
 }
+
+.intructions div{
+  border: 4px #080808 solid;
+  border-radius: 5%;
+}
+
+
+#napalm-ani {
+  background-image: url('./images/backgrounds/aninap.png');
+  padding: 10vh;
+  background-position: center;
+  background-size: cover;
+  
+}
+
+#shot-ani {
+  background-image: url("./images/backgrounds/anishoot.png");
+  padding: 10vh;
+  background-position: center;
+  background-size: cover;
+}
+
+#move-ani {
+  background-image: url("./images/backgrounds/animov.png");
+  padding: 10vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.movement div{
+
+}
+
 
 /* PANTALLA GAME*/
 
@@ -135,7 +173,6 @@ html {
   text-align: center;
   gap: 8vh;
   margin-bottom: 3vh;
-  
 }
 
 

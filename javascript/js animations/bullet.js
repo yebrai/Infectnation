@@ -7,7 +7,7 @@ class Bullet {
         //this.y = 0 necesita ser la posy del soldier
         this.w = 30; 
         this.h = 30; 
-        this.speed = 40
+        this.speed = 5
 
     }
 

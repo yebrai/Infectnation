@@ -88,7 +88,7 @@ window.addEventListener("keydown", (event) => {
 
 window.addEventListener("click", () => { 
     if (gameObj !== undefined) {
-        bulletRespawn = gameObj.soldier.y
+        bulletRespawn = gameObj.soldier.y +13
         gameObj.addBullet()
         
     }

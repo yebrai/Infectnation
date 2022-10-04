@@ -36,7 +36,7 @@ class Game {
    }
   };
   addZombie = () => {
-    if (this.frames % this.timeLeft === 0) {
+    if (this.frames % this.timeLeft=== 0) {
       switch (randomInt(1,3)) {
         case 1:
           this.zombieArr.push(new Zombie("./images/zombie1.png"));
@@ -54,7 +54,7 @@ class Game {
   };
 
   addIntervalJet = () => {
-    if (this.frames === 0 || this.frames % 580 === 50){
+    if (this.frames === 0 || this.frames % 880 === 50){
      this.jetArr.push(new Jet(randomInt(100, 500)))
   }
   }
@@ -66,7 +66,7 @@ class Game {
       return
     }
     this.zombieArr.forEach((eachZombie, indiceZombie) => {
-      this.napalm.forEach((eachNapalm, indiceBullet) => {
+      this.napalm.forEach((eachNapalm) => {
         if (
           eachNapalm.x < eachZombie.x + eachZombie.w &&
           eachNapalm.x + eachNapalm.w > eachZombie.x &&
