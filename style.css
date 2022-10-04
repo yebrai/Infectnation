@@ -2,7 +2,6 @@
 @import url("http://fonts.cdnfonts.com/css/highscore-hero");
 @import url("http://fonts.cdnfonts.com/css/zombie-control");
 @import url("http://fonts.cdnfonts.com/css/qtmilitary");
-@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 
 
@@ -183,7 +182,7 @@ html {
   background: radial-gradient(circle, rgba(179,78,10,1) 30%, rgba(104,36,24,1) 100%);
   border: 1px #080808 solid;
   border-radius: 5%;
-  font-family: 'Reem Kufi Ink', sans-serif;
+  font-family: "QTMilitary", sans-serif;
   font-size: 1.5rem;
   width: 18vh;
 }
@@ -206,7 +205,8 @@ font-size: 1.5rem;
 
 .healths span{
   font-size: 2rem;
-  font-family: 'Bungee Spice', cursive;
+  font-family: "QTMilitary", sans-serif;
+  color: darkred;
 }
 
 .evacuation span{
