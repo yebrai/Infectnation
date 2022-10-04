@@ -20,20 +20,5 @@ class Zombie {
         this.x = this.x - this.walkSpeed
     }
     
-    addZombie = () => {
-        if (this.frames % 40 === 0) {
-          switch (randomInt(1,3)) {
-            case 1:
-              this.zombieArr.push(new Zombie("./images/zombie1.png"));
-              break;
-            case 2:
-              this.zombieArr.push(new Zombie("./images/zombie2.png"));
-              break;
-            case 3:
-              this.zombieArr.push(new Zombie("./images/zombie3.png"));
-              break;
-          }
-        }
-      };
 
 }

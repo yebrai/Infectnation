@@ -19,6 +19,7 @@ class Game {
     this.youWin = "url('./images/backgrounds/win.jpg')"
     this.youLose = "url('./images/backgrounds/zombiewin.jpg')"
     this.jetCall = false
+    this.infernolvl = false
     
   }
 
@@ -39,8 +40,8 @@ class Game {
     this.bulletArr.push(new Bullet());
    }
   };
-  addZombie = () => {
-    if (this.frames % this.timeLeft=== 0) {
+  addZombie = (respawnMode) => {
+    if (this.frames % respawnMode === 0) {
       switch (randomInt(1,3)) {
         case 1:
           this.zombieArr.push(new Zombie("./images/zombie1.png"));
@@ -171,6 +172,14 @@ class Game {
       
   };
 
+  infernoMode = () => {
+    if (this.infernolvl === true) {
+      this.addZombie(2)
+    } else {
+      this.addZombie(this.timeLeft);
+    }
+  }
+
 
   //recursion
   gameLoop = () => {
@@ -193,7 +202,7 @@ class Game {
     //3. Dibujo de elementos.
     this.drawFondo();
     this.drawWall()
-    this.addZombie();
+    this.infernoMode()
     this.zombieArr.forEach((eachZombie) => {
       eachZombie.drawZombie();
       eachZombie.moveZombie();

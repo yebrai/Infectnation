@@ -20,6 +20,7 @@ const totalKills = document.querySelector("#loser-screen span")
 const killScore = document.querySelector(".kills span")
 const rescueTime = document.querySelector(".evacuation .value-time")
 const fortunateSong = document.querySelector("#audioMain");
+const infernoButton = document.querySelector("#inferno")
 
 let gameObj
 let bulletRespawn = 0
@@ -38,11 +39,12 @@ const introGame = () => {
     loserScreen.style.display= "none"
     startScreen.style.display = "none"
     fortunateSong.play()
+    fortunateSong.volume = 0.1
 }
 
 
 
-const startGame = () => {
+const startGame = (lvl) => {
   startScreen.style.display = "none"
   loserScreen.style.display = "none"
   introScreen.style.display= "none"
@@ -51,9 +53,10 @@ const startGame = () => {
   gameObj.gameLoop()
   napalmRemains = 3
   fortunateSong.play()
-
+  gameObj.infernolvl = lvl
 
 }
+
 
 
 const endGame = (background, text, color, fontfamily) => {
@@ -66,11 +69,21 @@ const endGame = (background, text, color, fontfamily) => {
     endTittle.style.color = color
     endTittle.style.fontFamily = fontfamily
     fortunateSong.pause()
+    gameObj.infernolvl = false
+    napalmRemains = 3
+
+}
+
+const infernoMode = () => {
+    startGame(true)
+    napalmRemains = randomInt(1, 100)
 }
 
 startButton.addEventListener("click", introGame)
 introButton.addEventListener("click", startGame)
 restartButton.addEventListener("click", startGame)
+infernoButton.addEventListener("click", infernoMode)
+
 
 window.addEventListener("keydown", (event) => {
     if (gameObj !== undefined) {
