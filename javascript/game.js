@@ -61,6 +61,8 @@ class Game {
   addIntervalJet = () => {
     if (this.frames === 0 || this.frames % 880 === 50){
      this.jetArr.push(new Jet(randomInt(100, 500)))
+     jetSound.volume = 0.1
+     jetSound.play()
   }
   }
   addNapalm = () => {
@@ -212,23 +214,23 @@ class Game {
       eachBullet.drawBullet();
       eachBullet.shotSpeed();
     });
+    
+    this.drawNapalmRemains()
     this.napalm.forEach((eachNapalm) => {
       if(this.napalm.length !== 0) {
-      eachNapalm.drawNapalm()
-      eachNapalm.napalmExpand()
-
+        eachNapalm.drawNapalm()
+        eachNapalm.napalmExpand()
       }
     })
     this.addIntervalJet()
     this.jetArr.forEach((eachJet) => {
       if(this.jetArr.length !== 0) {
-      eachJet.drawJet()
-      eachJet.drawShadowJet()
+        eachJet.drawJet()
+        eachJet.drawShadowJet()
       }
     })
-    this.drawNapalmRemains()
     this.drawnPilotMessage(stamp)
-
+    
     ////////////////// this.bullet.drawBullet(this.soldier.y)
     //4. control de la recursion
     if (this.isGameOn) {

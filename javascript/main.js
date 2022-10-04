@@ -28,8 +28,8 @@ let napalmRemains = 3
 let introFrames = 0
 let fpsCount = 0
 
-//fps estabilizador
-//(variableReferencia, fps, contador)
+let shotSound = new Audio('../audio/shoot.wav');
+let jetSound = new Audio('../audio/jet.wav');
 
 //mantener pantallas fuera del start game
 gameScreen.style.display= "none"
@@ -53,7 +53,6 @@ const introGame = () => {
 }
 
 
-
 const startGame = (lvl) => {
   startScreen.style.display = "none"
   loserScreen.style.display = "none"
@@ -63,6 +62,7 @@ const startGame = (lvl) => {
   gameObj.gameLoop()
   napalmRemains = 3
   fortunateSong.play()
+  fortunateSong.volume = 0.1
   gameObj.infernolvl = lvl
 
 }
@@ -129,6 +129,8 @@ window.addEventListener("keydown", (event) => {
             gameObj.jetArr.push(new Jet(napalmRespawn))
             napalmRemains--
             gameObj.jetCall = true
+            jetSound.volume = 0.1
+            jetSound.play()
 
         }
 
@@ -139,6 +141,9 @@ window.addEventListener("click", () => {
     if (gameObj !== undefined) {
         bulletRespawn = gameObj.soldier.y +13
         gameObj.addBullet()
-        
+        if (gameObj.bulletArr.length ==! 0) {
+        shotSound.play();
+        shotSound.volume = 0.1
+    }
     }
 })
