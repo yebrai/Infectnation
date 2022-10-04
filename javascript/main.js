@@ -1,8 +1,7 @@
-//Tocado la velocidad de los zombies para mantener los hz
-// tocada la pantalla gameover para que se congele
-// como hacer colision entre arr bull y arr zombie? Necesito comprobar las pos de ambos
+// tienes un gameloopntro called
 
-
+//No me funciona la funcion de fpsRenderice ¿?
+//No me funcionan los setTimeout
 
 const canvasElement = document.querySelector("#canvas")
 const ctx = canvas.getContext("2d");
@@ -26,7 +25,11 @@ let gameObj
 let bulletRespawn = 0
 let napalmRespawn = 0
 let napalmRemains = 3
+let introFrames = 0
+let fpsCount = 0
 
+//fps estabilizador
+//(variableReferencia, fps, contador)
 
 //mantener pantallas fuera del start game
 gameScreen.style.display= "none"
@@ -40,6 +43,13 @@ const introGame = () => {
     startScreen.style.display = "none"
     fortunateSong.play()
     fortunateSong.volume = 0.1
+    introButton.style.display = "none"
+    gameLoopIntro()
+    const intervalStart = setInterval(disappearButton, 5000)
+    const blinkingButton = setInterval(blinkingEnterButton, 700)
+    const blinkingButtonTransparent = setInterval(blinkingEnterButtonTrans, 1400)
+   
+
 }
 
 
@@ -83,6 +93,25 @@ startButton.addEventListener("click", introGame)
 introButton.addEventListener("click", startGame)
 restartButton.addEventListener("click", startGame)
 infernoButton.addEventListener("click", infernoMode)
+
+let fpsRender = (fps) => {
+    introFrames++
+    if (introFrames % fps === 0) {
+      fpsCount++
+    }
+}
+
+let gameLoopIntro = () => {
+    //fpsRenderice(introFrames, 144, fpsCount)
+    fpsRender(144)
+    console.log(fpsCount)
+   // console.log(introFrames)
+    //fpsRenderice(introFrames, 144, fpsCount)
+
+
+requestAnimationFrame(gameLoopIntro);
+
+}
 
 
 window.addEventListener("keydown", (event) => {
