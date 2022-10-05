@@ -135,6 +135,7 @@ window.addEventListener("keydown", (event) => {
             gameObj.jetArr.push(new Jet(napalmRespawn))
             napalmRemains--
             gameObj.jetCall = true
+            gameObj.jetPilot.jetPilotImg = true
             jetSound.volume = 0.1
             jetSound.play()
 

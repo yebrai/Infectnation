@@ -11,6 +11,7 @@ class Game {
     this.jetArr = [];
     this.napalm = [];
     this.fire = new Fire()
+    this.jetPilot = new Jetpilot(144)
     this.frames = 0;
     this.health = 0;
     this.kills = 0;
@@ -136,8 +137,9 @@ class Game {
       let pilotMessage = `copied, we are on our way!`
       ctx.fillText(pilotMessage, canvas.width * 0.3, 80)
       ctx.fillStyle = "white"
-      if (this.fps % 240 === 0) {
+      if (this.frames % (this.fps *1.5) === 0) {
         this.jetCall = false
+        this.jetPilot.jetPilotImg = false
       }
   }
   } 
@@ -222,7 +224,6 @@ class Game {
     this.drawFondo();
     this.drawWall()
     this.fire.multiImage()
-    //this.fire.drawFire()
     this.infernoMode()
     this.zombieArr.forEach((eachZombie) => {
       eachZombie.drawZombie();
@@ -249,6 +250,7 @@ class Game {
       }
     })
     this.drawnPilotMessage()
+    this.jetPilot.drawJetpilot()
     
     ////////////////// this.bullet.drawBullet(this.soldier.y)
     //4. control de la recursion
