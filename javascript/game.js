@@ -157,7 +157,16 @@ class Game {
   };
   gameOver = () => {
     this.isGameOn = false;
+    dieGif.style.display = "block"
+    canvasElement.style.display = "none"
+
+    let loseTimeout = setTimeout(this.gameOverTimeout, 1500)
+  };
+
+  gameOverTimeout = () => {
     endGame(this.youLose, "You Lose", "rgb(150 31 17)", "Zombie Control")
+    dieGif.style.display = "none"
+    canvasElement.style.display = "block"
   };
   
   soldierWin = () => {

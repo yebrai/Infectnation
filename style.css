@@ -257,6 +257,14 @@ font-size: 1.5rem;
   font-family: "Highscore Hero", sans-serif;
 }
 
+#loser-screen h3 {
+  font-size: 2rem;
+  margin: 8vh;
+  text-shadow: 10px 10px 10px rgb(63, 10, 19);
+  color: rgb(255, 236, 202);
+  font-family: "Highscore Hero", sans-serif;
+}
+
 
 .try-again {
   font-family: "QTMilitary", sans-serif;
@@ -296,4 +304,10 @@ font-size: 1.5rem;
   box-shadow: 0 0 50px rgb(248, 246, 247);
 
   
+}
+
+/*hiden elements*/
+
+#die-gif {
+  display: none
 }

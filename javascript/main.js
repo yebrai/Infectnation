@@ -20,6 +20,10 @@ const killScore = document.querySelector(".kills span")
 const rescueTime = document.querySelector(".evacuation .value-time")
 const fortunateSong = document.querySelector("#audioMain");
 const infernoButton = document.querySelector("#inferno")
+const highscoreValue = document.querySelector("#highscore-value")
+const dieGif = document.querySelector("#die-gif")
+
+
 
 let gameObj
 let bulletRespawn = 0
@@ -81,7 +85,6 @@ const endGame = (background, text, color, fontfamily) => {
     fortunateSong.pause()
     gameObj.infernolvl = false
     napalmRemains = 3
-
 }
 
 const infernoMode = () => {
