@@ -1,4 +1,4 @@
-// tienes un gameloopntro called hay q eliminarlo
+// implantar localStorage!!
 
 
 
