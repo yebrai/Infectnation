@@ -295,14 +295,17 @@ font-size: 1.5rem;
 
 
 #inferno {
-  background-color: rgb(220, 3, 20);
+  background-image: url('./gif/inferno.gif');
+  background-position: center;
   font-family: "Zombie Control", sans-serif;
+  color: white;
+  
   
 }
 
 #inferno:hover {
-  color: rgb(248, 246, 247);
-  box-shadow: 0 0 50px rgb(248, 246, 247);
+  color: burlywood;
+  box-shadow: 0 0 50px burlywood;
 
   
 }
