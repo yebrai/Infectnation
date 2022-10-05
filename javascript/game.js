@@ -54,7 +54,6 @@ class Game {
           this.zombieArr.push(new Zombie("./images/zombie3.png"));
           break;
       }
-      
     }
   };
 

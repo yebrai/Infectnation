@@ -2,7 +2,11 @@ class Soldier {
 
     constructor () {
         this.img = new Image()
-        this.img.src ="./images/soldier1ant.png"
+        this.img.src = "./images/soldier1-1.png"
+        this.imgsoldier ="./images/soldier1-1.png"
+        this.imgShooting = "./images/soldiershooting.png"
+        // this.img.src ="./images/soldier1-1.png"
+        // this.img.src ="./images/soldier1-1.png"
         this.x = 0; 
         this.y = canvasElement.height * 0.5; 
         this.w = 100; 

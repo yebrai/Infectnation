@@ -53,6 +53,7 @@ const introGame = () => {
     const intervalStart = setInterval(disappearButton, 5000)
     const blinkingButton = setInterval(blinkingEnterButton, 700)
     const blinkingButtonTransparent = setInterval(blinkingEnterButtonTrans, 1400)
+    
    
 
 }
@@ -69,6 +70,7 @@ const startGame = (lvl) => {
   fortunateSong.play()
   fortunateSong.volume = 0.1
   gameObj.infernolvl = lvl
+  
 
 }
 
@@ -144,6 +146,9 @@ window.addEventListener("click", () => {
         if (gameObj.bulletArr.length ==! 0) {
         shotSound.play();
         shotSound.volume = 0.1
+        let shootAnimationId = setInterval(soldierShooting, 100)
+        let shootStopAnimationId = setInterval(soldierStop, 200)
+        
     }
     }
 })
