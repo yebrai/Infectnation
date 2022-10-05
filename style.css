@@ -306,7 +306,7 @@ font-size: 1.5rem;
   color: white;
 }
 
-#score-list {
+#score-list ul{
   background-color: grey;
   border: 4px #080808 solid;
   font-family: "QTMilitary", sans-serif;
