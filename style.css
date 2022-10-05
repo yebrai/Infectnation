@@ -137,7 +137,7 @@ html {
 
 
 #napalm-ani {
-  background-image: url('./images/backgrounds/aninap.png');
+  background-image: url('./gif/napalmgif.gif');
   padding: 10vh;
   background-position:top ;
   background-size: cover;
@@ -146,7 +146,7 @@ html {
 }
 
 #shot-ani {
-  background-image: url("./images/backgrounds/anishoot.png");
+  background-image: url("./gif/shootgif.gif");
   padding: 10vh;
   background-position: left;
   background-size: cover;
@@ -154,10 +154,11 @@ html {
 }
 
 #move-ani {
-  background-image: url("./images/backgrounds/animov.png");
+  background-image: url("./gif/movegif.gif");
   padding: 10vh;
   background-position: center;
   background-size: cover;
+  background-position: bottom;
   border: 3px rgb(103, 10, 19) solid;
 }
 
