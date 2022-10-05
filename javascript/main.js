@@ -21,6 +21,7 @@ const rescueTime = document.querySelector(".evacuation .value-time")
 const fortunateSong = document.querySelector("#audioMain");
 const inputName = document.querySelector("#input-name")
 const introText = document.querySelector(".intro-text")
+const endNameList = document.querySelector(".local-stats-li")
 const infernoButton = document.querySelector("#inferno")
 const highscoreValue = document.querySelector("#highscore-value")
 const dieGif = document.querySelector("#die-gif")
@@ -38,15 +39,20 @@ let fpsCount = 0
 gameScreen.style.display= "none"
 loserScreen.style.display= "none"
 introScreen.style.display= "none"
+highscoreValue.style.display= "none"
 
 //Local Storage
 
 const AddlocalStorage = () => {
-    localStorage.setItem(String(inputName.value), JSON.stringify([String(inputName.value), killScore]))
+    
+    localStorage.setItem(inputName.value = "soldier", gameObj.kills = 0)
 }
 
+
+endNameList.innerText = localStorage.getItem(inputName.value)
+
+
 const introGame = () => {
-    AddlocalStorage()
     introScreen.style.display= "flex"
     gameScreen.style.display= "none"
     loserScreen.style.display= "none"
@@ -58,11 +64,9 @@ const introGame = () => {
     const intervalStart = setInterval(disappearButton, 5000)
     const blinkingButton = setInterval(blinkingEnterButton, 700)
     const blinkingButtonTransparent = setInterval(blinkingEnterButtonTrans, 1400)
-    console.log(inputName.value)
     introText.innerText = `${inputName.value} ${introText.innerText}`
-    console.log(introText.innerText)
-   
-
+    console.log(inputName.value)
+    
 }
 
 
@@ -81,6 +85,8 @@ const startGame = (lvl) => {
   let soldierAnimationMove2 = setInterval(soldierMove2, 300)
   let soldierAnimationMove3 = setInterval(soldierMove3, 450)
   let soldierAnimationMove4 = setInterval(soldierMove4, 600)
+  console.log(inputName.value)
+
   
 
 }
@@ -88,6 +94,7 @@ const startGame = (lvl) => {
 
 
 const endGame = (background, text, color, fontfamily) => {
+    AddlocalStorage()
     startScreen.style.display = "none"
     loserScreen.style.display = "flex"
     introScreen.style.display= "none"
@@ -99,6 +106,9 @@ const endGame = (background, text, color, fontfamily) => {
     fortunateSong.pause()
     gameObj.infernolvl = false
     napalmRemains = 3
+    highscoreValue.style.display= "block"
+    console.log(inputName.value)
+    console.log(AddlocalStorage());
 }
 
 const infernoMode = () => {

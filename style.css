@@ -255,7 +255,7 @@ font-size: 1.5rem;
 }
 
 #loser-screen h1 {
-  font-size: 6rem;
+  font-size: 5rem;
   font-family: "Zombie Control", sans-serif;
   color: rgb(150 31 17);
   text-shadow: 10px 10px 10px rgb(63, 10, 19);
@@ -264,15 +264,7 @@ font-size: 1.5rem;
 
 #loser-screen h4 {
   font-size: 2rem;
-  margin: 8vh;
-  text-shadow: 10px 10px 10px rgb(63, 10, 19);
-  color: rgb(255, 236, 202);
-  font-family: "Highscore Hero", sans-serif;
-}
 
-#loser-screen h3 {
-  font-size: 2rem;
-  margin: 8vh;
   text-shadow: 10px 10px 10px rgb(63, 10, 19);
   color: rgb(255, 236, 202);
   font-family: "Highscore Hero", sans-serif;
@@ -283,7 +275,7 @@ font-size: 1.5rem;
   font-family: "QTMilitary", sans-serif;
   font-size: 1.5rem;
   border: 0;
-  height: 10vh;
+  height: 7vh;
   width: 20vh;
   background-color: rgb(138 64 14);
   border: none;
@@ -301,6 +293,7 @@ font-size: 1.5rem;
 }
 
 #final-button {
+  margin-top: 2vh;
   display: flex;
   gap: 5vh;
 }
@@ -311,16 +304,35 @@ font-size: 1.5rem;
   background-position: center;
   font-family: "Zombie Control", sans-serif;
   color: white;
-  
-  
 }
+
+#score-list {
+  background-color: grey;
+  border: 4px #080808 solid;
+  font-family: "QTMilitary", sans-serif;
+  font-size: 2rem;
+  height: 20vh;
+  width: 40vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+#score-list li {
+  display:flex;
+  gap: 5vh;
+}
+
+.local-stats-li {
+  margin-top: 2vh;
+}
+
 
 #inferno:hover {
   color: black;
   box-shadow: 0 0 50px burlywood;
   font-size: 1.8rem;
-
-  
 }
 
 /*hiden elements*/
