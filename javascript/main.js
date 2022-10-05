@@ -33,9 +33,6 @@ let napalmRemains = 3
 let introFrames = 0
 let fpsCount = 0
 
-let shotSound = new Audio('../audio/shoot.wav');
-let jetSound = new Audio('../audio/jet.wav');
-
 //mantener pantallas fuera del start game
 gameScreen.style.display= "none"
 loserScreen.style.display= "none"
@@ -136,8 +133,8 @@ window.addEventListener("keydown", (event) => {
             napalmRemains--
             gameObj.jetCall = true
             gameObj.jetPilot.jetPilotImg = true
-            jetSound.volume = 0.1
-            jetSound.play()
+            gameObj.jetSound.volume = 0.1
+            gameObj.jetSound.play()
 
         }
 
@@ -149,8 +146,6 @@ window.addEventListener("click", () => {
         bulletRespawn = gameObj.soldier.y +13
         gameObj.addBullet()
         if (gameObj.bulletArr.length ==! 0) {
-        shotSound.play();
-        shotSound.volume = 0.1
         let shootAnimationId = setInterval(soldierShooting, 100)
         let shootStopAnimationId = setInterval(soldierStop, 200)
         

@@ -23,6 +23,10 @@ class Game {
     this.jetCall = false
     this.infernolvl = false
     this.fpsCount = 0
+
+    //sounds
+    this.shotSound = new Audio('./audio/shoot.wav');
+    this.jetSound = new Audio('./audio/jet.wav');
     
   }
 
@@ -41,6 +45,8 @@ class Game {
   addBullet = () => {
     if(this.frames > 20) {
     this.bulletArr.push(new Bullet());
+    gameObj.shotSound.play();
+    gameObj.shotSound.volume = 0.1
    }
   };
   addZombie = (respawnMode) => {
@@ -62,8 +68,8 @@ class Game {
   addIntervalJet = () => {
     if (this.frames === 0 || this.frames % 880 === 50){
      this.jetArr.push(new Jet(randomInt(100, 500)))
-     jetSound.volume = 0.1
-     jetSound.play()
+     this.jetSound.volume = 0.1
+     this.jetSound.play()
   }
   }
   addNapalm = () => {

@@ -137,7 +137,7 @@ html {
 #napalm-ani {
   background-image: url('./gif/napalmgif.gif');
   padding: 10vh;
-  background-position:center;
+  background-position: center;
   background-size: cover;
   border: 3px rgb(103, 10, 19) solid;
   
