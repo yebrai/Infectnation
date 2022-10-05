@@ -106,11 +106,7 @@ infernoButton.addEventListener("click", infernoMode)
  }
 
 let gameLoopIntro = () => {
-    //fpsCount = fpsRenderice(introFrames, 144, fpsCount)
     fpsRender(144)
-    //console.log(fpsCount)
-   // console.log(introFrames)
-
 
 requestAnimationFrame(gameLoopIntro);
 

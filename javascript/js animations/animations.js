@@ -20,8 +20,7 @@
      introButton.style.color = "white"
  }
  function blinkingEnterButtonTrans() {
-    
+
      introButton.style.color = "transparent"
  }
 
- 

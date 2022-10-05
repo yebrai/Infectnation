@@ -246,13 +246,12 @@ class Game {
         eachJet.drawShadowJet()
       }
     })
-    this.drawnPilotMessage(stamp)
+    this.drawnPilotMessage()
     
     ////////////////// this.bullet.drawBullet(this.soldier.y)
     //4. control de la recursion
     if (this.isGameOn) {
-      requestAnimationFrame((stamp) => this.gameLoop(stamp));
-      console.log("gameloop: ",stamp)
+      requestAnimationFrame(() => this.gameLoop());
     }
   };
 }
