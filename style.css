@@ -15,7 +15,6 @@ html {
   display: none
   }
 
-
 #splash-screen {
   display: grid;
   grid-template-columns: 20% 60% 20%;
@@ -30,6 +29,21 @@ html {
   border: 4px #080808 solid;
 }
 
+#input-name {
+  width: 15vh;
+  height: 3vh;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin-top: 25vh;
+  background-color: black;
+  color: rgb(255, 236, 202);
+  font-family: "QTMilitary", sans-serif;
+  text-align: center;
+  
+
+}
 
 /* PANTALLA START*/
 #splash-screen h1 {
@@ -74,7 +88,7 @@ html {
 #intro-screen {
   border: 4px #080808 solid;
   height: 90vh;
-  width: 90vh;
+  width: 89.3vh;
   margin: 0 auto;
   background-image: url('./images/backgrounds/intro1.jpg');
   background-position: center;
@@ -93,7 +107,7 @@ html {
   text-shadow: 0px 0px 10px white;
   font-family: "QTMilitary", sans-serif;
   margin: 15vh;
-  margin-top: 5vh;
+  margin-top: 10vh;
 }
 
 #intro-screen button{
@@ -127,8 +141,8 @@ html {
 }
 
 .intructions div{
-  border: 3px #080808 solid;
-  border-radius: 5% 0 0 0;
+  border-left: 3px #080808 solid;
+
   background-color: rgb(98 45 10 / 50%);
   
 }

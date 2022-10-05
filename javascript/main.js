@@ -19,11 +19,12 @@ const totalKills = document.querySelector("#loser-screen span")
 const killScore = document.querySelector(".kills span")
 const rescueTime = document.querySelector(".evacuation .value-time")
 const fortunateSong = document.querySelector("#audioMain");
+const inputName = document.querySelector("#input-name")
+const introText = document.querySelector(".intro-text")
 const infernoButton = document.querySelector("#inferno")
 const highscoreValue = document.querySelector("#highscore-value")
 const dieGif = document.querySelector("#die-gif")
 const winGif = document.querySelector("#win-gif")
-
 
 
 let gameObj
@@ -38,7 +39,14 @@ gameScreen.style.display= "none"
 loserScreen.style.display= "none"
 introScreen.style.display= "none"
 
+//Local Storage
+
+const AddlocalStorage = () => {
+    localStorage.setItem(String(inputName.value), JSON.stringify([String(inputName.value), killScore]))
+}
+
 const introGame = () => {
+    AddlocalStorage()
     introScreen.style.display= "flex"
     gameScreen.style.display= "none"
     loserScreen.style.display= "none"
@@ -50,7 +58,9 @@ const introGame = () => {
     const intervalStart = setInterval(disappearButton, 5000)
     const blinkingButton = setInterval(blinkingEnterButton, 700)
     const blinkingButtonTransparent = setInterval(blinkingEnterButtonTrans, 1400)
-    
+    console.log(inputName.value)
+    introText.innerText = `${inputName.value} ${introText.innerText}`
+    console.log(introText.innerText)
    
 
 }
