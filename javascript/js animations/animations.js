@@ -35,4 +35,18 @@ function soldierStop() {
     gameObj.soldier.img.src = "./images/soldier1-1.png"
 }
 
+//animation move soldier
+
+function soldierMove1() {
+    gameObj.soldier.img.src = "./images/soldier1-1.png"
+}
+function soldierMove2() {
+    gameObj.soldier.img.src = "./images/soldier1-2.png"
+}
+function soldierMove3() {
+    gameObj.soldier.img.src = "./images/soldier1-3.png"
+}
+function soldierMove4() {
+    gameObj.soldier.img.src = "./images/soldier1-4.png"
+}
 
