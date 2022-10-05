@@ -10,6 +10,7 @@ class Game {
     this.zombieArr = [];
     this.jetArr = [];
     this.napalm = [];
+    this.fire = new Fire()
     this.frames = 0;
     this.health = 0;
     this.kills = 0;
@@ -200,7 +201,7 @@ class Game {
 
 
   //recursion
-  gameLoop = (stamp) => {
+  gameLoop = () => {
     //console.log(this.frames);
     this.frames++;
     // console.log("test");
@@ -220,9 +221,11 @@ class Game {
     //3. Dibujo de elementos.
     this.drawFondo();
     this.drawWall()
+    this.fire.multiImage()
+    //this.fire.drawFire()
     this.infernoMode()
     this.zombieArr.forEach((eachZombie) => {
-      eachZombie.drawZombie(stamp);
+      eachZombie.drawZombie();
       eachZombie.moveZombie();
     });
     this.soldier.drawSoldier();
