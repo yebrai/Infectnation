@@ -22,6 +22,7 @@ const fortunateSong = document.querySelector("#audioMain");
 const infernoButton = document.querySelector("#inferno")
 const highscoreValue = document.querySelector("#highscore-value")
 const dieGif = document.querySelector("#die-gif")
+const winGif = document.querySelector("#win-gif")
 
 
 

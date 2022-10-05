@@ -179,9 +179,17 @@ class Game {
 
   winGame = () => {
       this.isGameOn = false;
-      endGame(this.youWin, "You Win", "darkblue", "Highscore Hero")
+      winGif.style.display = "block"
+      canvasElement.style.display = "none"
+      let winTimeout = setTimeout(this.winGameTimeout, 1500)
       
   };
+
+  winGameTimeout = () => {
+    endGame(this.youWin, "You Win", "darkblue", "Highscore Hero")
+    winGif.style.display = "none"
+    canvasElement.style.display = "block"
+  }
 
   infernoMode = () => {
     if (this.infernolvl === true) {
