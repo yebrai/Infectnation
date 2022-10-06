@@ -25,8 +25,16 @@ const infernoButton = document.querySelector("#inferno")
 const dieGif = document.querySelector("#die-gif")
 const winGif = document.querySelector("#win-gif")
 
-const endNameList = document.querySelector(".local-stats-li p") // Name value pantalla final
+const userNameValue = document.querySelector("#listUserName") // Name value pantalla final
+const userNameValue2 = document.querySelector("#listUserName2")
+const userNameValue3 = document.querySelector("#listUserName3")
 const highscoreValue = document.querySelector("#highscore-value") // Kills value pantalla final
+const highscoreValue2 = document.querySelector("#highscore-value2")
+const highscoreValue3 = document.querySelector("#highscore-value3")
+
+//highscoreValue2.innerText = 22
+//userNameValue2.innerText = "prueba"
+
 //css tocado, ojo
 
 let gameObj
@@ -50,13 +58,15 @@ highscoreValue.style.display= "none"
     }else {
      localStorage.setItem("userName", inputName.value)
      localStorage.setItem("kills", gameObj.kills)
+     extractLocalStorage()
     }
  }
 
  const extractLocalStorage = () => {
-    endNameList.innerText = localStorage.getItem("userName")
+    userNameValue.innerText = localStorage.getItem("userName")
     highscoreValue.innerText = localStorage.getItem("kills")
  } 
+
 
 
 
@@ -123,6 +133,8 @@ const endGame = (background, text, color, fontfamily) => {
 const infernoMode = () => {
     startGame(true)
     napalmRemains = randomInt(1, 100)
+    gameObj.timeLeft = 59
+
 }
 
 startButton.addEventListener("click", introGame)
