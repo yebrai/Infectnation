@@ -306,26 +306,58 @@ font-size: 1.5rem;
   color: white;
 }
 
-#score-list ul{
+#score-list-ul{
   background-color: grey;
   border: 4px #080808 solid;
   font-family: "QTMilitary", sans-serif;
   font-size: 2rem;
-  height: 20vh;
-  width: 40vh;
+  height: 9vh;
+  width: 60vh;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
+  padding: 0;
+  
 }
 #score-list li {
-  display:flex;
   gap: 5vh;
+  font-size: 1.2rem;
+  height: 9vh;
+  width: 15vh;
+  border-left: 1px #080808 solid;
+  text-decoration: none;
+  list-style: none;
+  
 }
 
-.local-stats-li {
-  margin-top: 2vh;
+#score-list-ul .top-info-list p{
+  color: azure;
+  font-family: 'Bungee Spice', cursive;
+  font-size: 1.rem;
+  padding: 0;
+}
+
+#score-list-ul .top-info-list span{
+  font-family: "Zombie Control", sans-serif;
+  font-size: 1.5rem;
+  color: rgb(63, 10, 19);
+}
+
+.top-info-list p, .local-stats-li p{
+  height: 3vh;
+  border-bottom: 1px #080808 solid;
+}
+
+
+
+#score-list h5{
+  font-size: 2.5rem;
+  font-family: 'Bungee Spice', cursive;
+  margin: 0 auto;
+  text-align: center;
+  
 }
 
 
@@ -333,6 +365,7 @@ font-size: 1.5rem;
   color: black;
   box-shadow: 0 0 50px burlywood;
   font-size: 1.8rem;
+
 }
 
 /*hiden elements*/

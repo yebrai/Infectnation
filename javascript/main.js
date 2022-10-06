@@ -1,6 +1,6 @@
 // implantar localStorage!!
 
-
+//end game modificado para saltarse el juego
 
 
 const canvasElement = document.querySelector("#canvas")
@@ -21,12 +21,17 @@ const rescueTime = document.querySelector(".evacuation .value-time")
 const fortunateSong = document.querySelector("#audioMain");
 const inputName = document.querySelector("#input-name")
 const introText = document.querySelector(".intro-text")
-const endNameList = document.querySelector(".local-stats-li")
 const infernoButton = document.querySelector("#inferno")
-const highscoreValue = document.querySelector("#highscore-value")
 const dieGif = document.querySelector("#die-gif")
 const winGif = document.querySelector("#win-gif")
 
+const endNameList = document.querySelector("#username-value") // Name value pantalla final
+const endNameList2 = document.querySelector("#username-value2") // Name value pantalla final
+const endNameList3 = document.querySelector("#username-value3") // Name value pantalla final
+const highscoreValue = document.querySelector("#highscore-value") // Kills value pantalla final
+const highscoreValue2 = document.querySelector("#highscore-value2") // Kills value pantalla final
+const highscoreValue3 = document.querySelector("#highscore-value3") // Kills value pantalla final
+//css tocado, ojo
 
 let gameObj
 let bulletRespawn = 0
@@ -41,15 +46,25 @@ loserScreen.style.display= "none"
 introScreen.style.display= "none"
 highscoreValue.style.display= "none"
 
-//Local Storage
+//test
 
-const AddlocalStorage = () => {
-    
-    localStorage.setItem(inputName.value = "soldier", gameObj.kills = 0)
-}
+let testArr= [highscoreValue, highscoreValue2, highscoreValue3]
 
+//local storage
+ const AddlocalStorage = () => {
+    if (localStorage.getItem("kills") > gameObj.kills) {
+        return
+    }else {
+     localStorage.setItem("userName", inputName.value)
+     localStorage.setItem("kills", gameObj.kills)
+    }
+ }
 
-endNameList.innerText = localStorage.getItem(inputName.value)
+ const extractLocalStorage = () => {
+    endNameList.innerText = localStorage.getItem("userName")
+    highscoreValue.innerText = localStorage.getItem("kills")
+ } 
+
 
 
 const introGame = () => {
@@ -65,7 +80,7 @@ const introGame = () => {
     const blinkingButton = setInterval(blinkingEnterButton, 700)
     const blinkingButtonTransparent = setInterval(blinkingEnterButtonTrans, 1400)
     introText.innerText = `${inputName.value} ${introText.innerText}`
-    console.log(inputName.value)
+
     
 }
 
@@ -85,7 +100,7 @@ const startGame = (lvl) => {
   let soldierAnimationMove2 = setInterval(soldierMove2, 300)
   let soldierAnimationMove3 = setInterval(soldierMove3, 450)
   let soldierAnimationMove4 = setInterval(soldierMove4, 600)
-  console.log(inputName.value)
+
 
   
 
@@ -95,6 +110,7 @@ const startGame = (lvl) => {
 
 const endGame = (background, text, color, fontfamily) => {
     AddlocalStorage()
+    extractLocalStorage()
     startScreen.style.display = "none"
     loserScreen.style.display = "flex"
     introScreen.style.display= "none"
@@ -107,8 +123,8 @@ const endGame = (background, text, color, fontfamily) => {
     gameObj.infernolvl = false
     napalmRemains = 3
     highscoreValue.style.display= "block"
-    console.log(inputName.value)
-    console.log(AddlocalStorage());
+
+
 }
 
 const infernoMode = () => {
