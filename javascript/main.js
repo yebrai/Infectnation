@@ -156,6 +156,10 @@ requestAnimationFrame(gameLoopIntro);
 
 
 window.addEventListener("keydown", (event) => {
+    if (event.code === "Enter" && gameObj === undefined) {
+        console.log("pulsada")
+        introGame()
+    }
     if (gameObj !== undefined) {
         if(event.code === "KeyW" && gameObj.soldier.y > 0) {
             gameObj.soldier.movementSoldier("up")
