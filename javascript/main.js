@@ -25,12 +25,8 @@ const infernoButton = document.querySelector("#inferno")
 const dieGif = document.querySelector("#die-gif")
 const winGif = document.querySelector("#win-gif")
 
-const endNameValue = document.querySelector("#username-value") // Name value pantalla final
-const endNameValue2 = document.querySelector("#username-value2") // Name value pantalla final
-const endNameValue3 = document.querySelector("#username-value3") // Name value pantalla final
+const endNameList = document.querySelector(".local-stats-li p") // Name value pantalla final
 const highscoreValue = document.querySelector("#highscore-value") // Kills value pantalla final
-const highscoreValue2 = document.querySelector("#highscore-value2") // Kills value pantalla final
-const highscoreValue3 = document.querySelector("#highscore-value3") // Kills value pantalla final
 //css tocado, ojo
 
 let gameObj
@@ -46,9 +42,6 @@ loserScreen.style.display= "none"
 introScreen.style.display= "none"
 highscoreValue.style.display= "none"
 
-//test
-
-let testArr= [highscoreValue, highscoreValue2, highscoreValue3]
 
 //local storage
  const AddlocalStorage = () => {
@@ -60,9 +53,9 @@ let testArr= [highscoreValue, highscoreValue2, highscoreValue3]
     }
  }
 
- const extractLocalStorage = (valueName, valueHighscore) => {
-    valueName.innerText = localStorage.getItem("userName")
-    valueHighscore.innerText = localStorage.getItem("kills")
+ const extractLocalStorage = () => {
+    endNameList.innerText = localStorage.getItem("userName")
+    highscoreValue.innerText = localStorage.getItem("kills")
  } 
 
 
@@ -110,7 +103,7 @@ const startGame = (lvl) => {
 
 const endGame = (background, text, color, fontfamily) => {
     AddlocalStorage()
-    extractLocalStorage(endNameValue, highscoreValue)
+    extractLocalStorage()
     startScreen.style.display = "none"
     loserScreen.style.display = "flex"
     introScreen.style.display= "none"

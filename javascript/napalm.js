@@ -14,7 +14,6 @@ class Napalm {
 
     drawNapalm = (y) => {
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-        console.log(this.frames)
         this.frames++
         
     }
