@@ -26,11 +26,9 @@ const dieGif = document.querySelector("#die-gif")
 const winGif = document.querySelector("#win-gif")
 
 const userNameValue = document.querySelector("#listUserName") // Name value pantalla final
-const userNameValue2 = document.querySelector("#listUserName2")
-const userNameValue3 = document.querySelector("#listUserName3")
+
 const highscoreValue = document.querySelector("#highscore-value") // Kills value pantalla final
-const highscoreValue2 = document.querySelector("#highscore-value2")
-const highscoreValue3 = document.querySelector("#highscore-value3")
+
 
 //highscoreValue2.innerText = 22
 //userNameValue2.innerText = "prueba"
@@ -64,7 +62,7 @@ highscoreValue.style.display= "none"
 
  const extractLocalStorage = () => {
     userNameValue.innerText = localStorage.getItem("userName")
-    highscoreValue.innerText = localStorage.getItem("kills")
+    highscoreValue.innerText = localStorage.getItem("kills") + " Kills"
  } 
 
 
