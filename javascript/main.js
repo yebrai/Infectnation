@@ -97,10 +97,10 @@ const startGame = (lvl) => {
   fortunateSong.play()
   fortunateSong.volume = 0.1
   gameObj.infernolvl = lvl
-  let soldierAnimationMove1 = setInterval(soldierMove1, 150)
-  let soldierAnimationMove2 = setInterval(soldierMove2, 300)
-  let soldierAnimationMove3 = setInterval(soldierMove3, 450)
-  let soldierAnimationMove4 = setInterval(soldierMove4, 600)
+  let soldierAnimationMove1 = setInterval(soldierMove1, 200)
+  let soldierAnimationMove2 = setInterval(soldierMove2, 400)
+  let soldierAnimationMove3 = setInterval(soldierMove3, 600)
+  let soldierAnimationMove4 = setInterval(soldierMove4, 800)
 
 
   
