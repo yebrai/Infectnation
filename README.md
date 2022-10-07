@@ -2,119 +2,195 @@
 
 ## Description
 
-Infectnation es un juego donde la mision es moverte horizontalmente y lanzar disparos para matar a los zombies y que estos no pasen a la zona de exclusion. la meta es conseguir aguantar el maximo tiempo conteniendo a los zombies.
+Infectnation es un juego donde la mision es defender la zona de exclusion durante 20segundos, tienes disparar a los zombies y tienes 3 ataques especiales de napalm para convatir la horda, si 5 zombies o mas pasan la zona o si un zombie te alcanza estas muerto... Para los que les gusten la dificultad esta el modo infierno, el cual te da un numero random de napalm y amplia el tiempo de supervivencia. Segun el final de tu historia en el juego te esperan diferentes pantallas.
 
 ## MVP (DOM - CANVAS)
 
 - Soldier class, moves on Y-exis
-- zombie class, moves on X-exis to widht
+- zombie class, moves on X-exis
 - zombies appear on random x-exis
 - bullets kill zombies
-- the shoot speed increase with kills
-- the zombies respawn appear with kills
-- kills counter, and extra animation for each 10 kills
+- the zombies respawn increase per seconds
+- kills counter and special attack.
 
 ## Backlog
 
 - add scoreboard
-- Ability to start the game
+- Button for inferno mode
 
 ## Data Structure
 
-<!-- # main.js
+ # main.js
 
-- buildSplashScreen () {}
-- buildGameScreen () {}
-- buildGameOverScreen () {}
+- introGame () {}
+- startGame (lvl) {} 
+- endGame (background, text, color, fontfamily) {}
+- infernoMode () {}
+- fpsRender (fps) {}
+- AddlocalStorage () {}
+- extractLocalStorage () {}
 
 # game.js
 
 - Game () {}
 - starLoop () {}
-- checkCollisions () {}
-- addTentacle () {}
-- clearCanvas () {}
-- updateCanvas () {}
-- drawCanvas () {}
+- drawFondo () {}
+- drawWall () {}
+- addBullet () {}
+- addZombie (respawnMode) {}
+- addIntervalJet () {}
+- addNapalm () {}
+- zombieAttack () {}
+- zombieHitbox () {}
+- drawNapalmRemains () {}
+- drawnPilotMessage () {}
+- zombieWin () {}
+- soldierWin () {}
+- infernoMode () {}
+- winGameTimeout () {}
+- winGame () {}
+- gameOverTimeout () {}
 - GameOver () {}
 
-# ship.js 
+# soldier.js 
 
-- Ship () {
+- Soldier () {
     this.x;
     this.y;
     this.direction;
     this.size
+    this.frames
+    this.speed
 }
-- draw () {}
-- move () {}
-- shoot () {}
-- checkScreenCollision () {}
+- drawSoldier () {}
+- movementSoldier () {}
 
-# tentacle.js 
+# zombie.js 
 
-- Tentacle () {
+- Zombie () {
     this.x;
     this.y;
     this.direction;
     this.size
+    this.walkSpeed
 }
-- draw () {}
-- move () {}
+- drawZombie () {}
+- moveZombie () {}
 - checkCollisionBotton () {}
 
-# cannonball.js 
+# bullet.js 
 
-- Cannonball () {
+- Bullet () {
     this.x;
     this.y;
     this.direction;
     this.size
+    this.speed
 }
-- draw () {}
-- move () {}
-- checkCollisionTop () {}
+- drawBullet () {}
+- shotSpeed () {}
+
+# napalm.js 
+
+- Napalm () {
+    this.x;
+    this.y;
+    this.direction;
+    this.size
+    this.speed
+}
+- drawNapalm () {}
+- napalmExpand () {}
+
+# jetPilot.js 
+
+- jetpilot () {
+    this.x;
+    this.y;
+    this.direction;
+    this.size
+    this.jetPilotImg
+}
+- drawJetpilot () {}
+
+# jet.js 
+
+- Jet (yPos) {
+    this.x;
+    this.y;
+    this.direction;
+    this.size
+    this.speed
+    this.shadow
+}
+- drawJet () {}
+- drawShadowJet () {}
+
+# fire.js 
+
+- Fire () {
+    this.x;
+    this.y;
+    this.direction;
+    this.size
+    this.speed
+    this.frames
+    this.imgFps
+}
+- drawFire () {}
+- multiImage () {}
+
 
 ## States y States Transitions
 Definition of the different states and their transition (transition functions)
 
-- splashScreen
+- startScreen
+- introScreen
 - gameScreen
-- gameOverScreen
+- loserScreen
 
 ## Task
 
 - main - buildDom
-- main - buildSplashScreen
-- main - addEventListener
+- main - buildStartScreen
+- main - buildIntroScreen
 - main - buildGameScreen
-- main - buildGameOverScreen
+- main - buildLoserScreen
+- main - addEventListener
+- main - addLocalStorage
+- main - ExtractLocalStorage
 - game - startLoop
 - game - buildCanvas
 - game - updateCanvas
 - game - drawCanvas
-- tentacle - draw
-- tentacle - move
 - game - addTentacle
-- ship - draw
-- ship - move
-- ship - shoot
-- game - addShip
-- cannonball - draw
-- cannonball - move
+- game - addZombie
+- game - addFire
+- game - addWall
+- game - addJet
+- game - addPilotMessage
+- game - addPilotJet
+- game - addNapalm
+- soldier - draw
+- soldier - move
+- soldier - shoot
+- soldier - checkCollision
+- zombie - draw
+- zombie - move
+- zombie - checkCollision
+- bullet - draw
+- bullet - speed
+- bullet - checkCollision
 - game - checkCollision
 - game - GameOver
-- game - addEventListener -->
+- game - winGame
 
 ## Links
-
-### Trello
-[Link url](https://trello.com/b/CWviY2zv/kraken-brigade-project)
 
 ### Git
 URls for the project repo and deploy
 [Link Repo](https://github.com/yebrai/Infectnation)
-[Link Deploy](Maintance)
+[Link Deploy](https://yebrai.github.io/Infectnation)
 
 ### Slides
 URls for the project presentation (slides)
