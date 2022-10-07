@@ -27,6 +27,7 @@ html {
   background-position: center;
   background-size: cover;
   border: 4px #080808 solid;
+  box-shadow: 0 0 20px rgb(180, 3, 20);
 }
 
 #input-name {
@@ -99,6 +100,7 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow: 0 0 20px rgb(180, 3, 20);
 }
 
 .intro-text {
@@ -219,6 +221,7 @@ font-size: 1.5rem;
 #game-screen canvas, #game-screen img {
   border: 4px #080808 solid;
   box-shadow: 0 0 20px rgb(180, 3, 20);
+  
 }
 
 .kills span{
