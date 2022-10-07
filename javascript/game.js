@@ -46,7 +46,7 @@ class Game {
     if(this.frames > 20) {
     this.bulletArr.push(new Bullet());
     gameObj.shotSound.play();
-    gameObj.shotSound.volume = 0.1
+    gameObj.shotSound.volume = 0.03
    }
   };
   addZombie = (respawnMode) => {
@@ -68,7 +68,7 @@ class Game {
   addIntervalJet = () => {
     if (this.frames === 0 || this.frames % 880 === 50){
      this.jetArr.push(new Jet(randomInt(100, 500)))
-     this.jetSound.volume = 0.1
+     this.jetSound.volume = 0.03
      this.jetSound.play()
   }
   }

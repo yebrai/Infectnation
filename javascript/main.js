@@ -74,7 +74,7 @@ const introGame = () => {
     loserScreen.style.display= "none"
     startScreen.style.display = "none"
     fortunateSong.play()
-    fortunateSong.volume = 0.1
+    fortunateSong.volume = 0.04
     introButton.style.display = "none"
     gameLoopIntro()
     const intervalStart = setInterval(disappearButton, 5000)
@@ -95,7 +95,7 @@ const startGame = (lvl) => {
   gameObj.gameLoop()
   napalmRemains = 3
   fortunateSong.play()
-  fortunateSong.volume = 0.1
+  fortunateSong.volume = 0.04
   gameObj.infernolvl = lvl
   let soldierAnimationMove1 = setInterval(soldierMove1, 200)
   let soldierAnimationMove2 = setInterval(soldierMove2, 400)
@@ -176,7 +176,7 @@ window.addEventListener("keydown", (event) => {
             napalmRemains--
             gameObj.jetCall = true
             gameObj.jetPilot.jetPilotImg = true
-            gameObj.jetSound.volume = 0.1
+            gameObj.jetSound.volume = 0.04
             gameObj.jetSound.play()
 
         }
