@@ -2,7 +2,7 @@
 
 ## Description
 
-Infectnation es un juego donde la mision es defender la zona de exclusion durante 20segundos, tienes disparar a los zombies y tienes 3 ataques especiales de napalm para convatir la horda, si 5 zombies o mas pasan la zona o si un zombie te alcanza estas muerto... Para los que les gusten la dificultad esta el modo infierno, el cual te da un numero random de napalm y amplia el tiempo de supervivencia. Segun el final de tu historia en el juego te esperan diferentes pantallas.
+Infectnation is a game where the mission is to defend the evacuation zone. shoot the zombies and ask for napalm to kill them... It saves the score of the best users based on kills and you have the "hell mode" to go for the top!
 
 ## MVP (DOM - CANVAS)
 
