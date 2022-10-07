@@ -1,7 +1,7 @@
 //canvas
 const canvasElement = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
-//Pantallas
+//Screens
 const startScreen = document.querySelector("#splash-screen");
 const introScreen = document.querySelector("#intro-screen");
 const loserScreen = document.querySelector("#loser-screen");
@@ -27,8 +27,6 @@ const introText = document.querySelector(".intro-text");
 const fortunateSong = document.querySelector("#audioMain");
 const dieGif = document.querySelector("#die-gif");
 const winGif = document.querySelector("#win-gif");
-
-
 
 let gameObj;
 let bulletRespawn = 0;

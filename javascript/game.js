@@ -110,6 +110,7 @@ class Game {
   };
 
   zombieHitbox = () => {
+    //guard clause
     if (this.bulletArr.length === 0) {
       return; // Stop the function
     }
