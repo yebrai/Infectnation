@@ -43,7 +43,7 @@ class Game {
   }
 
   addBullet = () => {
-    if(this.frames > 20) {
+    if(this.frames > 20 && gameScreen.style.display !== "none") {
     this.bulletArr.push(new Bullet());
     gameObj.shotSound.play();
     gameObj.shotSound.volume = 0.03
