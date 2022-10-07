@@ -1,12 +1,11 @@
-
-
 let randomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-  
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 let fpsRenderice = (variableReferencia, fps, contador) => {
-  variableReferencia++
+  variableReferencia++;
   if (variableReferencia % fps === 0) {
-    contador++
-  } return contador
-}
+    contador++;
+  }
+  return contador;
+};

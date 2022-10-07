@@ -320,7 +320,7 @@ font-size: 1.5rem;
 #score-list-ul{
   background-color: grey;
   font-family: "QTMilitary", sans-serif;
-  color: rgb(179,78,10);
+  color: rgb(54 36 23);
   font-size: 2rem;
   height: 5vh;
   width: 30vh;
@@ -357,8 +357,7 @@ font-size: 1.5rem;
 #inferno:hover {
   color: black;
   box-shadow: 0 0 50px burlywood;
-  font-size: 1.8rem;
-
+  font-size: 1.6rem;
 }
 
 /*hiden elements*/

@@ -140,6 +140,19 @@ Infectnation is a game where the mission is to defend the evacuation zone. shoot
 - drawFire () {}
 - multiImage () {}
 
+# Math.js 
+Reutilizable Math functions:
+- randomInt () {}
+- fpsRenderice() {}
+
+# Animations.js 
+Retuilizable Functions for animations (setitemsTimeouts, interval, sprites...)
+- changeColor() {}
+- disappearButton() {}
+- blinkingEnterButton() {}
+- soldierShooting() {}
+- soldierStop() {}
+- soldierMove() {}
 
 ## States y States Transitions
 Definition of the different states and their transition (transition functions)
@@ -194,4 +207,4 @@ URls for the project repo and deploy
 
 ### Slides
 URls for the project presentation (slides)
-[Link Slides.com](Maintance)
+[Link Slides.com](https://docs.google.com/presentation/d/11Y1Caqpzyk48BuuEiUYdhFXp5YDpCfBP_pi02C7vkVo/edit?usp=sharing)
