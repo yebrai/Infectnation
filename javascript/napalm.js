@@ -13,9 +13,9 @@ class Napalm {
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     this.frames++;
   };
-//for napalm "Jumps" / ceil for fix error with decimals
+//for napalm "Jumps"
   napalmExpand = () => {
-      if (this.frames % Math.ceil(fps * 0.1) === 0) {
+      if (this.frames % 20 === 0) {
       this.x = this.x + 90;
     }
   };

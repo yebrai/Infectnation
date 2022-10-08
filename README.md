@@ -78,7 +78,7 @@ Infectnation is a game where the mission is to defend the evacuation zone. shoot
 }
 - drawZombie () {}
 - moveZombie () {}
-- checkCollisionBotton () {}
+- fpsRenderSpeed () {}
 
 # bullet.js 
 

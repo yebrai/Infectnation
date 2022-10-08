@@ -228,6 +228,7 @@ class Game {
     this.zombieArr.forEach((eachZombie) => {
       eachZombie.drawZombie();
       eachZombie.moveZombie();
+      eachZombie.fpsRenderSpeed()
     });
     this.soldier.drawSoldier();
     this.bulletArr.forEach((eachBullet) => {
