@@ -6,7 +6,7 @@ class Jet {
     this.y = yPos;
     this.w = 250;
     this.h = 250;
-    this.speed = 3;
+    this.speed = 7;
     this.shadow = new Image();
     this.shadow.src = "./images/shadowjet.png";
   }

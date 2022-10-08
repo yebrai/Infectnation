@@ -13,10 +13,11 @@ class Napalm {
   drawNapalm = (y) => {
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     this.frames++;
+    console.log(this.frames)
   };
 //for napalm "Jumps"
   napalmExpand = () => {
-    if (this.frames % 30 === 0) {
+      if (this.frames % 20 === 0) {
       this.fps++;
       this.x = this.x + 90;
     }

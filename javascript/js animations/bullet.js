@@ -6,7 +6,7 @@ class Bullet {
     this.y = bulletRespawn;
     this.w = 30;
     this.h = 30;
-    this.speed = 12;
+    this.speed = 20;
   }
 
   drawBullet = () => {

@@ -149,6 +149,7 @@ window.addEventListener("keydown", (event) => {
       }
       napalmRespawn = gameObj.soldier.y;
       gameObj.addNapalm();
+      gameObj.napalm[0].frames = 0
       gameObj.jetArr.push(new Jet(napalmRespawn));
       napalmRemains--;
       gameObj.jetCall = true;
