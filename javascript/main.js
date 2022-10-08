@@ -122,11 +122,15 @@ const infernoMode = () => {
   napalmRemains = randomInt(1, 100);
   gameObj.timeLeft = 59;
 };
+
 // cooldown button for change
 const detectFPS = () => {
   setTimeout(() => {
     testGoing = false; // to stop recursion frame counter after 1 second.
     // * if starting game with button, unlock button here
+    if (fps >= 70) {
+      fps = 20 // 144hz * 0,41 = 60 / 2 = 24.2 (this is for 144hz+ pcs)
+    }
     startButton.addEventListener("click", introGame);
   }, 1000);
 };

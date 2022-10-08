@@ -29,7 +29,8 @@ class Fire{
      for (let i = 0; i  < canvasElement.height; i= i +75) {
          ctx.drawImage(this.img, canvas.width * 0.9, i, this.w, this.h)
      }
-     if (this.frames % 10 === 0) {
+     //Math.floor for fix error with decimals
+     if (this.frames % Math.floor(fps * 0.09) === 0) {
          this.imgFps++
          if (this.imgFps >= 13) {
              this.imgFps = 1

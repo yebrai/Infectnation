@@ -17,29 +17,29 @@ class Game {
     this.kills = 0;
     this.isGameOn = true;
     this.timeLeft = 20;
+    setInterval(this.timeLeftCount, 1000)
     this.fps = fps;
     this.youWin = "url('./images/backgrounds/win.jpg')";
     this.youLose = "url('./images/backgrounds/zombiewin.jpg')";
     this.jetCall = false;
     this.infernolvl = false;
     this.fpsCount = 0;
-
     //sounds
     this.shotSound = new Audio("./audio/shoot.wav");
     this.jetSound = new Audio("./audio/jet.wav");
   }
-  //adapted frames with 144hz
-  fpsRender = () => {
-    if (this.frames % this.fps === 0) {
-      this.timeLeft--;
-    }
-  };
+  
+
   drawFondo = () => {
     ctx.drawImage(this.fondo, 0, 0, canvasElement.width, canvasElement.height);
   };
   drawWall = () => {
     ctx.drawImage(this.wall, 850, 0, -200, canvasElement.height);
   };
+
+  timeLeftCount = () => {
+    this.timeLeft--
+  }
 
   addBullet = () => {
     if (this.frames > 20 && gameScreen.style.display !== "none") {
@@ -220,7 +220,6 @@ class Game {
     this.soldierWin();
     this.zombieHitbox();
     this.napalmDamage();
-    this.fpsRender();
     // Draw elements.
     this.drawFondo();
     this.drawWall();

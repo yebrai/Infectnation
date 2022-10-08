@@ -7,17 +7,15 @@ class Napalm {
     this.w = 250;
     this.h = 250;
     this.frames = 0;
-    this.fps = 0;
   }
 
-  drawNapalm = (y) => {
+  drawNapalm = () => {
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     this.frames++;
   };
-//for napalm "Jumps"
+//for napalm "Jumps" / ceil for fix error with decimals
   napalmExpand = () => {
-      if (this.frames % 10 === 0) {
-      this.fps++;
+      if (this.frames % Math.ceil(fps * 0.1) === 0) {
       this.x = this.x + 90;
     }
   };

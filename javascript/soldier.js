@@ -16,6 +16,9 @@ class Soldier {
   };
 
   movementSoldier = (upOrDown) => {
+    if (fps < 30) {
+      this.speed = fps *0.45
+    }
     if (upOrDown === "up") {
       this.y = this.y - this.speed;
     } else if (upOrDown === "down") {
