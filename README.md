@@ -26,7 +26,8 @@ Infectnation is a game where the mission is to defend the evacuation zone. shoot
 - startGame (lvl) {} 
 - endGame (background, text, color, fontfamily) {}
 - infernoMode () {}
-- fpsRender (fps) {}
+- detectFPS () {}
+- framesRecursion () {}
 - AddlocalStorage () {}
 - extractLocalStorage () {}
 
@@ -34,6 +35,7 @@ Infectnation is a game where the mission is to defend the evacuation zone. shoot
 
 - Game () {}
 - starLoop () {}
+- timeLeftCount () {}
 - drawFondo () {}
 - drawWall () {}
 - addBullet () {}

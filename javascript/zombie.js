@@ -6,7 +6,7 @@ class Zombie {
     this.y = randomInt(1, canvasElement.height - 70);
     this.w = 80;
     this.h = 80;
-    this.walkSpeed = randomInt(fps * 0.04, fps * 0.06);
+    this.walkSpeed = randomInt(fps * 0.04, fps * 0.05);
   }
 
   drawZombie = () => {
