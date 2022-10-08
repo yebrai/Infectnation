@@ -155,7 +155,6 @@ class Game {
     for (let i = 0; i < this.zombieArr.length; i++) {
       if (this.zombieArr.length !== 0 && this.zombieArr[i].x < -20) {
         this.health++;
-        console.log("el score es: ", this.health);
         if (this.health >= 5) {
           this.gameOver();
         }

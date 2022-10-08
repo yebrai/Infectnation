@@ -8,7 +8,7 @@ class Soldier {
     this.y = canvasElement.height * 0.5;
     this.w = 100;
     this.h = 100;
-    this.speed = 10;
+    this.speed = fps *0.20;
   }
 
   drawSoldier = () => {

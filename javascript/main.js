@@ -57,6 +57,17 @@ const extractLocalStorage = () => {
   highscoreValue.innerText = localStorage.getItem("kills") + " Kills";
 };
 
+let fps = 0
+let testGoing = true
+
+const framesRecursion = () => {
+  if (testGoing === true) {
+    fps++; // increase FPS until stop at 1 second.
+    //console.log("counting frames"); // remove after testing.
+    requestAnimationFrame(framesRecursion);
+  }
+};
+
 const introGame = () => {
   introScreen.style.display = "flex";
   gameScreen.style.display = "none";
@@ -65,7 +76,7 @@ const introGame = () => {
   fortunateSong.play();
   fortunateSong.volume = 0.04;
   introButton.style.display = "none";
-  gameLoopIntro();
+
   const intervalStart = setInterval(disappearButton, 5000);
   const blinkingButton = setInterval(blinkingEnterButton, 700);
   const blinkingButtonTransparent = setInterval(blinkingEnterButtonTrans, 1400);
@@ -77,7 +88,7 @@ const startGame = (lvl) => {
   loserScreen.style.display = "none";
   introScreen.style.display = "none";
   gameScreen.style.display = "flex";
-  gameObj = new Game(144);
+  gameObj = new Game(fps);
   gameObj.gameLoop();
   napalmRemains = 3;
   fortunateSong.play();
@@ -111,28 +122,27 @@ const infernoMode = () => {
   napalmRemains = randomInt(1, 100);
   gameObj.timeLeft = 59;
 };
-
-startButton.addEventListener("click", introGame);
+// cooldown button for change
+const detectFPS = () => {
+  setTimeout(() => {
+    testGoing = false; // to stop recursion frame counter after 1 second.
+    // * if starting game with button, unlock button here
+    startButton.addEventListener("click", introGame);
+  }, 1000);
+};
 introButton.addEventListener("click", startGame);
 restartButton.addEventListener("click", startGame);
 infernoButton.addEventListener("click", infernoMode);
 
-let fpsRender = (fps) => {
-  introFrames++;
-  if (introFrames % fps === 0) {
-    fpsCount++;
-  }
-};
 
-let gameLoopIntro = () => {
-  fpsRender(144);
-
-  requestAnimationFrame(gameLoopIntro);
-};
+//fps detection functions call
+window.addEventListener("load", () => {
+  detectFPS();
+  framesRecursion();
+});
 
 window.addEventListener("keydown", (event) => {
   if (event.code === "Enter" && gameObj === undefined) {
-    console.log("pulsada");
     introGame();
   }
   if (gameObj !== undefined) {
@@ -148,8 +158,8 @@ window.addEventListener("keydown", (event) => {
         return;
       }
       napalmRespawn = gameObj.soldier.y;
-      gameObj.addNapalm();
-      gameObj.napalm[0].frames = 0
+      //adding cd on addNapalm
+      let cooldownNapalm = setTimeout(gameObj.addNapalm, 500);
       gameObj.jetArr.push(new Jet(napalmRespawn));
       napalmRemains--;
       gameObj.jetCall = true;
