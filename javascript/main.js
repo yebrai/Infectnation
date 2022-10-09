@@ -128,7 +128,6 @@ const detectFPS = () => {
   setTimeout(() => {
     testGoing = false; // to stop recursion frame counter after 1 second.
     // * if starting game with button, unlock button here
-
     startButton.addEventListener("click", introGame);
   }, 1000);
 };
